@@ -1,0 +1,229 @@
+new in 1.73
+Converted the intire app to nvgt.
+Updated readme file with removed keyboard shortcuts.
+new in 1.72
+The escape key now instently quits the app, rather than asking you if you want to exit it with a menu prompt.
+Made it so the app instently launches upon opening it. You no longer need to select it from the main menu.
+Removed all menu code related to the app. As a result, the control and shuffle menus are no longer available.
+new in 1.71
+Switched the sound system back to the old one, do to the new audio system having issues with volume and pan etc.
+new in 1.7
+Recoded the intire sound system. This time, it's finally possible to add other effects to your music, such as delay, reverb, and high/lowpass, thanks to a newly made dll that handels these. A huge thanks goes out to M1Maker for the big help converting the old sound_pool over to this one.
+new in 1.69
+Added 20 plus tracks from the game Echos from levia to the echos folder.
+Added 10 tracks from the game Audio wizards to the awd folder.
+new in 1.68
+The left and right arrow keys can no longer be used while the keys are locked.
+Removed the ability to lock all of the keys from being used with a passcode.
+new in 1.67
+Fixed the bug of not being able to update the volume, pan, and pitch as it was being changed in the controls menu.
+Added 50 plus tracks from the game Scrolling  battles your world to the sbyw folder.
+new in 1.66
+The playback sounds, shuffle sounds, and lock sounds now respect the effect changes being made along with the adjustment sounds.
+new in 1.65
+Added 40 plus tracks from the game Adventure at C to the aac folder.
+Added 50 plus tracks from the RS games client to the rsg folder.
+new in 1.64
+Added 50 plus tracks from the Bokurano Daibouken series to the bk folder.
+Added 100 plus tracks from the game Daily Life to the dl folder.
+You can now enable or disable the sounds you hear when adjusting effects by pressing the letter B.
+new in 1.63
+Removed the preffs folder where all of the CTN files were located. I felt that these wern't necessary anymore.
+Added sound feadback to all adjustable effect parameters. These sounds will change based on what the value of the effects are set to, such as volume going heigher or lower.
+Recoded all effects. Now when you press the letters L, P, and T, it will tell you that the values are already reset.
+new in 1.62
+Made it possible to shuffle through all of the music folders by pressing R.
+You can now press left and right arrows to quickly go through all of the music folders, and then press G to shuffle the folder you're currently focused on.
+new in 1.61
+Removed the following menu items from the controls menu: rewind 5 seconds and fast forward 5 seconds, do to the new sound system not supporting it.
+Fixed a bug with setting volume, pan, and pitch when choosing it from the controls menu.
+Added a designated shuffle menu that will allow you to shuffle any folder of music that you have stored on this program. You can press the number 1 key on the keyboard to open it.
+new in 1.6
+Made it possible to play and shuffle all music, regardless of it's file extencion. You're no longer limmited to playing tracks in ogg format. This app will also except wav audio files as well.
+new in 1.59
+Added 240 new tracks to the Golden Crayon folder. There are now 380 tracks in total.
+new in 1.58
+Fixed the bug in wich if you pressed the letter X to toggle playback sounds on or off, the music wouldn't resume propperly when you pressed enter to pause and resume it again, causing you to have to press one of the shuffle keys to start up a new track.
+new in 1.57
+Added a settings folder that will allow you to customize any internal properties that are asined in the code. For example, each setting file has the ctn extencion that can be modified by opening it in a text editor. All of the intiger variables that were previously embedded into the code are still there, but now you can easyly alter them within the folder for quick access. You'll need to restart the app to apply any changes you've made to the settings file.
+new in 1.56
+The spoken feadback when adjusting the values of volume, pan, and pitch are now turned off by default.
+new in 1.55
+Finally brought back the spoken feadback when pressing the letters W, S, F, J, Z, and C while adjusting volume, pan, and pitch. These will now be anounced in percentages, not in actuall values.
+new in 1.54
+Minor enhancements to make this app sail smoother.
+new in 1.53
+Made it possible to add as menny tracks as you want from any of the folders that has already been asind to this program. It will no longer limit you to just randomizing music that was previously there.
+new in 1.52
+Pressing the letters L, P, and T will no longer indecate the reset state if it is pressed repeadedly. It will only anounce the reset state of the effects parameter if the volume, pan, or pitch go abuv or below the default value.
+new in 1.51
+Changed the way in wich values of parameters are spoken when pressing the letters V, H, and N. From now on, all adjustible effects will be anounced in percentages, not actual values.
+Pressing the letters W, S, F, J, Z, and C will no longer anounce the values of volume, pan, and pitch as they are adjusted.
+new in 1.5
+Removed the menu prompt that asked you if you wanted to unlock all the keys for use. Now if you press the Letter Y wile the keys are locked, it will ask you to enter the passcode to unlock it.
+Removed the keys that were asined to seak back and forth through a track, do to the new sound algorithm not supporting it.
+The volume, pan, and pitch now has an input field within the menu to directly spesify what you would like the effects to be altered to instead of just pressing keys to change them incrimentaley.
+Added a new menu that will allow you to modify effects and quickly access listening controls without pressing any asined keys. You can press the grave accent key on the keyboard to open it.
+Added a save feature to adjustable parameters. This will allow you to save the last changed effect the nex time you reshuffle tracks, or exit the app and come back to it.
+new in 1.49
+Removed extraneous messages related to pressing keys durring paused playback. You'll no longer hear it say, you can't do X Y Z wile the music is paused.
+new in 1.48
+recoded the intire sound system. As a result, seaking forward/backward through a track is no longer possible do to changes in how sounds are being loaded for playback. You can still change the volume, pan, and pitch of a playing track as before.
+new in 1.47
+The keys are now lockable with a passcode. If you provide the wrong number, it will remain locked untill you get it correct. A menu prompt will show up if you press the letter Y wile the keys are locked.
+new in 1.46
+added a new shuffle sound for randomizing music. You'll hear it everytime you press one of the shuffle keys.
+new in 1.45
+If the music is paused and you press the letter Y, you will not be able to lock the keys from being used unless the music is resumed.
+new in 1.44
+You can now lock all of the keys from being used by pressing the letter Y.
+new in 1.43
+If the music is paused and you press the letters Q, E, A, D, I, and K, you will not be able to hold and quickly adjust the volume, pan, or pitch of the playing track unless the music is resumed.
+new in 1.42
+If the music is paused and you press the letters W, S, Z, C, F, and J, you will not be able to adjust the volume, pan, or pitch of the playing track in 5 step increments unless the music is resumed.
+new in 1.41
+If the music is paused and you press the letters V, H, or N, the speech will no longer anounce the currently adjusted effect unless the music is resumed.
+new in 1.4
+If the music is paused, and you press the letter X, the speech will notify you that playback sounds can't be enabled unless the music is resumed.
+new in 1.39
+You can now disable playback sounds for when the music is played or resumed. Pressing the letter X will enable or disable these sounds.
+new in 1.38
+You can now seak forwards and backwards by 1 second while the music is playing. Pressing the letters G or B will let you do this.
+new in 1.37
+If the timer adjuster is turned off and you press the letter M, the speech will no longer anounce the value in ms. This applys to weather the music is playing or not.
+new in 1.36
+If the music is paused, and you press the letter U, the speech will notify you that the timer adjuster can't be enabled unless the music is resumed.
+new in 1.35
+You can now completely disable the wait timer feature by pressing the letter U. When you do this, pressing the up or down arrow key will no longer change the timer to reflect how fast the music parameters can be adjusted. If you would like to re enable this feature, pressing the letter U will turn it back on to be used again.
+new in 1.34
+Added sound feedback for adjusting the wait timer. These were obtained from the game survive the whild.
+new in 1.33
+The timer upper limit is now fixed to 500. The parameter can no longer go abuv this vallue.
+The timer lower limit is now fixed to 100. The parameter can no longer go below this vallue.
+new in 1.32
+Pressing the up or down arrow key will now anounce the timer's value as you change it.
+new in 1.31
+Pressing the letter M will anounce the timer's value in ms.
+new in 1.3
+Added the ability to adjust the wait timer for controling various parameters. Previously, the wait timer was fixed at a certain amount so people couldn't instently change things like volume or pitch at a sooper fast rate. Now you are allowed to change that according to how you like it. Pressing the up or down arrow key will either increase or decrease the timer. This timer applys to all controlable parameters, except for when you press the letters w, s, f, j, z, and c.
+new in 1.29
+If the music is paused, and you press the backslash key, the speech will notify you that the shuffle sound can't be enabled unless the music is resumed.
+new in 1.28
+If the music is paused and you press the keys tab, space, or backspace, the tracks will no longer randomize unless the music is resumed.
+new in 1.27
+You are now able to turn off the shuffling sound for when you press tab, space, or backspace. I added this just encase if some people find the sound very anoying after a while of using it. This way they can turn it off by pressing the backslash key, instead of removing  the sound completely.
+new in 1.26
+Replaced the music from the RSGames client app for windows and added 65 new ones from the game survive the wild.
+new in 1.25
+Changed the behavior of closing the program. Instead of instently exiting apon pressing alt f4 or escape, it will give you a prompt on weather you would like to close the app or not. The input box will ask you to type yes or no for this question. If you want to dismiss the dialog given, simply pressing escape twice while in the input box will put you back in  control of the player again.
+new in 1.24
+pressing the backspace key will now randumize music from the RSGames client app for windows.
+new in 1.23
+Pressing the spacebar will now randumize music from the game golden crayon.
+new in 1.22
+Changed the key from space to tab to randumize music from the game 3dimensional your world.
+new in 1.21
+Added sound feedback for randumizing tracks. This was obtained from an old IOS sounds folder.
+new in 1.2
+Finally added the ability to randomize tracks without reopening the program to do so. As of right now, you can only press the spacebar to randumize music from the game 3dimensional your world.
+new in 1.19
+Changed the wording when pressing the letters V, H, or N to speak values. Now it speaks the sound object that's currently being adjusted, along with the title of the parameter and it's changeable value.
+new in 1.18
+Pressing the letters W or S will anounce the volume in actuall values when adjusted, not in percentages.
+new in 1.17
+Pressing the letters Z or C will anounce the pan in actuall values when adjusted, not in percentages.
+new in 1.16
+Pressing the letters F or J will anounce the pitch in actuall values when adjusted, not in percentages.
+new in 1.15
+Pressing the letter V will anounce the current volume in actuall values, not in percentages.
+new in 1.14
+Pressing the letter N will anounce the current pan in actuall values, not in percentages.
+new in 1.13
+Pressing the letter H will anounce the current pitch in actuall values, not in percentages.
+new in 1.12
+Updated the folder with 19 new tracks from the RSGames client app for windows. Their are now 54 tracks in total.
+new in 1.11
+added 35 tracks to a different created folder from the RSGames client app for windows, used later on.
+new in 1.1
+added 140 tracks to a different created folder from the game golden crayon, used later on.
+new in 1.09
+Updated the folder with 70 new tracks from the game 3dimensional your world. Their are now 120 tracks in total.
+new in 1.08
+the app will now randomize between the existing tracks that were aded from a newly created folder, instead of the 3 other ones that were previously there before.
+new in 1.07
+Replaced the 3 menu tracks that were from Mason's open sourced projects and added 50 new ones from the game 3dimensional your world.
+new in 1.06
+The music volume will no longer be anounced every time you press and hold the letters Q or E.
+new in 1.05
+The music pan will no longer be anounced every time you press and hold the letters A or D.
+new in 1.04
+The music pitch will no longer be anounced every time you press and hold the letters K or I.
+new in 1.03
+The volume lower limit is now fixed to negative 50. The parameter can no longer go abuv this vallue.
+new in 1.02
+The pan upper limit is now fixed to 50. The parameter can no longer go abuv this vallue.
+The pan lower limit is now fixed to negative 50. The parameter can no longer go abuv this vallue.
+new in 1.01
+Added sound feadback for pausing/resuming music. These were obtained from the spotify app, to make things sound more realistic.
+new in 1.0
+Completely revampt the behavior of how the keys are layed out on the keyboard. Please refer to the readme for more details.
+The elements that have been changed are as follows.
+The letters that are sometimes called the fps keys on some audio games are used in this app to control volume, pan, and pitch of the playing song.
+Letters V, N, and H will anounce volume, pan, and pitch in percentages.
+Letter R will restart the currently playing song from the very beginning.
+Letters L, P, and T are used to reset the volume, pan and pitch parameters to their default values.";
+new in 0.36
+The music will no longer pause or resume if you go in and out of the window. From now on, it will continuesly play, regardless of weather the window is in focus or not. However, You can still press the enter key to pause and resume it if you'd like.
+new in 0.35
+Removed the intruductional message at startup, making it so you are able to instently launch the app and play stuff.
+new in 0.34
+Removed the ability to play dtmf tones, as this feature served no special perpose what's so ever. If you wanted to use it, the music would be completely silent, with no way of starting it back up again.
+new in 0.33
+The pitch upper limit is now fixed to 200. The parameter can no longer go abuv this vallue.
+The pitch lower limit is now fixed to 5. The parameter can no longer go below this vallue.
+new in 0.32
+Increased the wait time for adjusting parameters, especially when keys are held down. This is so you can't change things such as volume at lightning speed.
+new in 0.31
+The music will now pause if the window is not in focus. This is useful for when you don't want it playing in the backround wile you are using other apps.
+new in 0.3
+Changed the behavior of how the music is being played at startup. Now it will randomize between 3 existing tracks that are loaded within the app, every time you launch it.
+new in 0.29
+Added 2 additional tracks to the player.
+new in 0.28
+The music will now completely stop when using the telephone pad to play dtmf tones.
+new in 0.27
+Added a random feature to play dtmf tones. The numbers /simbles on the number row will trigger the sounds.
+new in 0.26
+Addressed the issue of not being able to close the app propperly. You can now do so by either pressing alt f4, or pressing escape to exit, thanks Masonasons.
+new in 0.25
+Added the ability to pause /resume music by pressing the enter key. Thanks to Masonasons for the help.
+new in 0.24
+The music pitch will now be anounced every time you press the up or down arrow key.
+new in 0.23
+The music pitch will now be anounced every time you press and hold the left or right arrow key.
+new in 0.22
+You can now reset the pitch by pressing the left and right arrow keys together.
+new in 0.21
+Added an intruductional message at startup to inform the users of what the app can do.
+new in 0.2
+The music pitch can be anounced by pressing the letter h.
+new in 0.19
+It is now possible to hold the left or right arrow key to rapidly increase and decrease the pitch.
+new in 0.18
+You are now able to change the pitch quicker by 5 steps when pressing the up or down arrow keys.
+new in 0.17
+You can now change the pitch by pressing the left or right arrow keys.
+new in 0.16
+The music volume can be anounced by pressing the letter v.
+new in 0.15
+It is now possible to hold page up or down to rapidly increase and decrease the volume.
+new in 0.14
+You are now able to change the volume quicker by 5 steps when pressing home or end.
+new in 0.13
+You can now change the music volume by pressing page up or down.
+new in 0.12
+The app will no longer exit after playing one single track. Instead, it will play in a continuous looped wile the window is still active. If you want to stop playing the music, then press escape to quit the program.
+new in 0.11
+A very basic player has been implemented. All it does right now is play one track, then immediately exit upon completion.
+new in 0.1
+Started creating the foundations of this simple to use music player.
