@@ -1,4 +1,6 @@
 new in 1.73
+Minor code improvements.
+Added sound feedback for changing music folders with the Left and Right arrow keys.
 Converted the intire app to nvgt.
 Updated readme file with removed keyboard shortcuts.
 new in 1.72
