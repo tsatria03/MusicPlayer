@@ -1,6 +1,8 @@
+new in 1.74
+Added the fade_pool function into the program. When you press escape, instead of immediately exiting the app, it will now fade the pitch of the music before quitting the app. Think of it like a tape stop effect on the sound.
+Added sound feedback for changing music folders with the Left and Right arrow keys.
 new in 1.73
 Minor code improvements.
-Added sound feedback for changing music folders with the Left and Right arrow keys.
 Converted the intire app to nvgt.
 Updated readme file with removed keyboard shortcuts.
 new in 1.72
