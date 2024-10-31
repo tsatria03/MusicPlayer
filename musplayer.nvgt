@@ -226,14 +226,14 @@ if (key_pressed(KEY_BACKSLASH) and shufflesoundkey==1)
 {
 if(shufflefeedback==1)
 {
-speak("shuffle sounds off");
 pool.play_stationary_extended("sounds/misc/misc7.ogg",false,0,0,-5,100,false);
+speak("shuffle sounds off");
 shufflefeedback=0;
 }
 else
 {
-speak("shuffle sounds on");
 pool.play_stationary_extended("sounds/misc/misc6.ogg",false,0,0,-5,100,false);
+speak("shuffle sounds on");
 shufflefeedback=1;
 }
 }
@@ -241,15 +241,15 @@ if(key_pressed(KEY_X) and playsoundkey==1)
 {
 if(pausefeedback==1 and resumefeedback==1)
 {
+pool.play_stationary_extended("sounds/misc/misc7.ogg",false,0,0,-5,100,false);
 speak("playback sounds off");
-pool.play_stationary_extended("sounds/misc/misc6.ogg",false,0,0,-5,100,false);
 pausefeedback=0;
 resumefeedback=0;
 }
 else
 {
+pool.play_stationary_extended("sounds/misc/misc6.ogg",false,0,0,-5,100,false);
 speak("playback sounds on");
-pool.play_stationary_extended("sounds/misc/misc7.ogg",false,0,0,-5,100,false);
 pausefeedback=1;
 resumefeedback=1;
 }
@@ -258,16 +258,16 @@ if(key_pressed(KEY_B) and paramsoundkey==1)
 {
 if(volsound==1 and pansound==1 and pitchsound==1)
 {
+pool.play_stationary_extended("sounds/misc/misc7.ogg",false,0,0,-5,100,false);
 speak("adjustment sounds off");
-pool.play_stationary_extended("sounds/misc/misc6.ogg",false,0,0,-5,100,false);
 volsound=0;
 pansound=0;
 pitchsound=0;
 }
 else
 {
+pool.play_stationary_extended("sounds/misc/misc6.ogg",false,0,0,-5,100,false);
 speak("adjustment sounds on");
-pool.play_stationary_extended("sounds/misc/misc7.ogg",false,0,0,-5,100,false);
 volsound=1;
 pansound=1;
 pitchsound=1;
@@ -277,15 +277,15 @@ if(key_pressed(KEY_U) and timekey==1)
 {
 if(timeadjust==1)
 {
-speak("timer adjustments off");
 pool.play_stationary_extended("sounds/misc/misc26.ogg",false,0,0,-5,100,false);
+speak("timer adjustments off");
 effectstime=500;
 timeadjust=0;
 }
 else
 {
-speak("timer adjustments on");
 pool.play_stationary_extended("sounds/misc/misc27.ogg",false,0,0,-5,100,false);
+speak("timer adjustments on");
 effectstime=100;
 timeadjust=1;
 }

@@ -1,4 +1,5 @@
 new in 1.74
+Fixed the case of reversed sounds for toggling playback and adjustment of effects.
 Added the fade_pool function into the program. When you press escape, instead of immediately exiting the app, it will now fade the pitch of the music before quitting the app. Think of it like a tape stop effect on the sound.
 Added sound feedback for changing music folders with the Left and Right arrow keys.
 new in 1.73
