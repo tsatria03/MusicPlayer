@@ -4,7 +4,7 @@
 double musicvolume=0, musicmaxvolume=120, musicpan=0, musicmaxpan=100, musicpitch=100, musicmaxpitch=200;
 int musicslot, switchslot;
 int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, shufflefeedback=1, timeadjust=1, effectstime=500;
-int playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
+int speakmuskey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=1, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
 sound_pool pool;
@@ -128,9 +128,9 @@ if(key_pressed(KEY_T))
 {
 reset_pitch();
 }
-if(key_pressed(KEY_SEMICOLON))
+if(key_pressed(KEY_SEMICOLON) and speakmuskey==1)
 {
-speak("You're currently focused on the "+musictype+" folder.");
+speak("You're currently focused on the "+musictype+" music folder.");
 }
 if(key_repeating(KEY_G) and shufflekey==1)
 {
@@ -313,6 +313,7 @@ playsoundkey=0;
 paramsoundkey=0;
 shufflekey=0;
 shufflesoundkey=0;
+speakmuskey=0;
 resumekey=0;
 timekey=0;
 volumeadjust=0;
@@ -341,6 +342,7 @@ playsoundkey=1;
 paramsoundkey=1;
 shufflekey=1;
 shufflesoundkey=1;
+speakmuskey=1;
 resumekey=1;
 timeadjust=1;
 timekey=1;
