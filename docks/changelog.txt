@@ -1,3 +1,5 @@
+new in 1.75
+Added the Semicolon key to keep track of wich music folder you're currently focused on. This is mainly useful for shuffling purposes, and you want to remember wich folder you were on prior to shuffeling the music. It will also tell you wich folder you're focused on when pressing the Left or Right arrow keys to change the music folder without shuffeling it.
 new in 1.74
 Fixed the case of certain sounds being reversed when toggling playback and adjusting effect params.
 Added the fade_pool function into the program. When you press escape, instead of immediately exiting the app, it will now fade the pitch of the music before quitting the app. Think of it like a tape stop effect on the sound.
