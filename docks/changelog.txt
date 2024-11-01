@@ -1,6 +1,6 @@
 new in 1.75
 Updated the readme file with added keyboard shortcuts.
-Made the Semicolon key lockable from speaking the currently focused music folder.
+Made the Semicolon key not speak the currently focused music folder if the key has been in a locked state.
 Added the Semicolon key to keep track of wich music folder you're currently focused on. This is mainly useful for shuffling purposes, and you want to remember wich folder you were on prior to shuffeling the music. It will also tell you wich folder you're focused on when pressing the Left or Right arrow keys to change the music folder without shuffeling it.
 new in 1.74
 Fixed the case of certain sounds being reversed when toggling playback and adjusting effect params.
