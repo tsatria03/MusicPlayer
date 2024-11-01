@@ -1,6 +1,6 @@
 Welcome to my simple music player.
-This app is not anything fancy, but it does come with a few features to customize your playing experience.
-This program is for those who want to listen to music of different types, mainly games. I'm planning on expanding it to ware you can add folders and files of different titles. This way, I don't have to constently preload sounds into memory wen the program executes.
+This app is not anything fancy. Although, it does come with a few features to customize your playing experience.
+This program is for those who want to listen to music of different types, mainly games.
 I made this because sometimes other apps get a bit too complecated to use to control audio files being played. This is especially true wen I want to adjust certain parameters, such as speed and pitch, but apps like foobar aren't so good at dooing this because of it's lack of accessibility in the DS effects panel. That's ware my simple music player comes in. It's simplistic, easy to use, and very flexible.
 Keyboard commands
 Letter, E: Increase music volume by 1 decibel, if pressed/held down.
@@ -36,4 +36,4 @@ Spacebar: Shuffles music from the game golden crayon, if pressed.
 Backspace: Shuffles music from the game survive the wild, if pressed.
 Semicolon : Anounce currently focused music folder, if pressed.
 Backslash: Turns the shuffle sound on or off, if pressed.
-Escape: Quickly exitthe the program, if pressed.
+Escape: exitthe the program, if pressed.
