@@ -175,12 +175,7 @@ The pan lower limit is now fixed to negative 50. The parameter can no longer go 
 new in 1.01
 Added sound feadback for pausing/resuming music. These were obtained from the spotify app, to make things sound more realistic.
 new in 1.0
-Completely revampt the behavior of how the keys are layed out on the keyboard. Please refer to the readme for more details.
-The elements that have been changed are as follows.
-The letters that are sometimes called the fps keys on some audio games are used in this app to control volume, pan, and pitch of the playing song.
-Letters V, N, and H will anounce volume, pan, and pitch in percentages.
-Letter R will restart the currently playing song from the very beginning.
-Letters L, P, and T are used to reset the volume, pan and pitch parameters to their default values.";
+Completely revampt the behavior of how the keys are layed out on the keyboard. Please refer to the readme for more details. The letters that are sometimes called the fps keys on some audio games are used in this app to control volume, pan, and pitch of the playing song. Letters V, N, and H will anounce volume, pan, and pitch in percentages. Letter R will restart the currently playing song from the very beginning. Letters L, P, and T are used to reset the volume, pan and pitch parameters to their default values.
 new in 0.36
 The music will no longer pause or resume if you go in and out of the window. From now on, it will continuesly play, regardless of weather the window is in focus or not. However, You can still press the enter key to pause and resume it if you'd like.
 new in 0.35
