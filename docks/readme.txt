@@ -34,5 +34,6 @@ Down arrow: Decrease the wait timer for adjusting effects, if pressed.
 Tab: Shuffles music from the game 3dimensional your world, if pressed.
 Spacebar: Shuffles music from the game golden crayon, if pressed.
 Backspace: Shuffles music from the game survive the wild, if pressed.
+Semicolon : Anounce currently focused music folder, if pressed.
 Backslash: Turns the shuffle sound on or off, if pressed.
 Escape: Quickly exitthe the program, if pressed.

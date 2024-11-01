@@ -1,4 +1,5 @@
 new in 1.75
+Updated the readme file with added keyboard shortcuts.
 Made the Semicolon key lockable from speaking the currently focused music folder.
 Added the Semicolon key to keep track of wich music folder you're currently focused on. This is mainly useful for shuffling purposes, and you want to remember wich folder you were on prior to shuffeling the music. It will also tell you wich folder you're focused on when pressing the Left or Right arrow keys to change the music folder without shuffeling it.
 new in 1.74
@@ -8,7 +9,7 @@ Added sound feedback for changing music folders with the Left and Right arrow ke
 new in 1.73
 Minor code improvements.
 Converted the intire app to nvgt.
-Updated readme file with removed keyboard shortcuts.
+Updated the readme file with removed keyboard shortcuts.
 new in 1.72
 The escape key now instently quits the app, rather than asking you if you want to exit it with a menu prompt.
 Made it so the app instently launches upon opening it. You no longer need to select it from the main menu.
