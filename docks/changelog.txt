@@ -57,16 +57,16 @@ Removed extraneous messages related to pressing keys durring paused playback. Yo
 recoded the intire sound system. As a result, seaking forward/backward through a track is no longer possible do to changes in how sounds are being loaded for playback. You can still change the volume, pan, and pitch of a playing track as before.
 The keys are now lockable with a passcode. If you provide the wrong number, it will remain locked untill you get it correct. A menu prompt will show up if you press the letter Y wile the keys are locked.
 added a new shuffle sound for randomizing music. You'll hear it everytime you press one of the shuffle keys.
-If the music is paused and you press the letter Y, you will not be able to lock the keys from being used unless the music is resumed.
+If the music is paused, and you press the letter Y, you will not be able to lock the keys from being used unless the music is resumed.
 You can now lock all of the keys from being used by pressing the letter Y.
-If the music is paused and you press the letters Q, E, A, D, I, and K, you will not be able to hold and quickly adjust the volume, pan, or pitch of the playing track unless the music is resumed.
-If the music is paused and you press the letters W, S, Z, C, F, and J, you will not be able to adjust the volume, pan, or pitch of the playing track in 5 step increments unless the music is resumed.
-If the music is paused and you press the letters V, H, or N, the speech will no longer anounce the currently adjusted effect unless the music is resumed.
+If the music is paused, and you press the letters Q, E, A, D, I, and K, you will not be able to hold and quickly adjust the volume, pan, or pitch of the playing track unless the music is resumed.
+If the music is paused, and you press the letters W, S, Z, C, F, and J, you will not be able to adjust the volume, pan, or pitch of the playing track in 5 step increments unless the music is resumed.
+If the music is paused, and you press the letters V, H, or N, the speech will no longer anounce the currently adjusted effect unless the music is resumed.
 If the music is paused, and you press the letter X, the speech will notify you that playback sounds can't be enabled unless the music is resumed.
 new in 1.5
 You can now disable playback sounds for when the music is played or resumed. Pressing the letter X will enable or disable these sounds.
 You can now seak forwards and backwards by 1 second while the music is playing. Pressing the letters G or B will let you do this.
-If the timer adjuster is turned off and you press the letter M, the speech will no longer anounce the value in ms. This applys to weather the music is playing or not.
+If the timer adjuster is turned off, and you press the letter M, the speech will no longer anounce the value in ms. This applys to weather the music is playing or not.
 If the music is paused, and you press the letter U, the speech will notify you that the timer adjuster can't be enabled unless the music is resumed.
 You can now completely disable the wait timer feature by pressing the letter U. When you do this, pressing the up or down arrow key will no longer change the timer to reflect how fast the music parameters can be adjusted. If you would like to re enable this feature, pressing the letter U will turn it back on to be used again.
 Added sound feedback for adjusting the wait timer. These were obtained from the game survive the whild.
@@ -77,7 +77,7 @@ Pressing the letter M will anounce the timer's value in ms.
 new in 1.4
 Added the ability to adjust the wait timer for controling various parameters. Previously, the wait timer was fixed at a certain amount so people couldn't instently change things like volume or pitch at a sooper fast rate. Now you are allowed to change that according to how you like it. Pressing the up or down arrow key will either increase or decrease the timer. This timer applys to all controlable parameters, except for when you press the letters w, s, f, j, z, and c.
 If the music is paused, and you press the backslash key, the speech will notify you that the shuffle sound can't be enabled unless the music is resumed.
-If the music is paused and you press the keys tab, space, or backspace, the tracks will no longer randomize unless the music is resumed.
+If the music is paused, and you press the keys tab, space, or backspace, the tracks will no longer randomize unless the music is resumed.
 You are now able to turn off the shuffling sound for when you press tab, space, or backspace. I added this just encase if some people find the sound very anoying after a while of using it. This way they can turn it off by pressing the backslash key, instead of removing  the sound completely.
 Replaced the music from the RSGames client app for windows and added 65 new ones from the game survive the wild.
 Changed the behavior of closing the program. Instead of instently exiting apon pressing alt f4 or escape, it will give you a prompt on weather you would like to close the app or not. The input box will ask you to type yes or no for this question. If you want to dismiss the dialog given, simply pressing escape twice while in the input box will put you back in  control of the player again.
