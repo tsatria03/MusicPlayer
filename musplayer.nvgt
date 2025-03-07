@@ -7,8 +7,8 @@ int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefe
 int speakmuskey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=1, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
-string version="2.0";
-sound_pool pool;
+string version="2.1";
+sound_pool pool, musicpool;
 timer effectstimer;
 string get_new_track(string track,int direction)
 {
@@ -53,8 +53,8 @@ musplay();
 void musplay()
 {
 string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=pool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 while(true)
 {
 wait(5);
@@ -175,12 +175,12 @@ if(shufflefeedback==1)
 switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
-if(pool.sound_is_playing(musicslot))
+if(musicpool.sound_is_playing(musicslot))
 {
-pool.destroy_sound(musicslot);
+musicpool.destroy_sound(musicslot);
 string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=pool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 if(key_pressed(KEY_R) and shufflekey==1)
@@ -190,13 +190,13 @@ if(shufflefeedback==1)
 switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
-if(pool.sound_is_playing(musicslot))
+if(musicpool.sound_is_playing(musicslot))
 {
 musictype=get_new_track(musictype,3);
-pool.destroy_sound(musicslot);
+musicpool.destroy_sound(musicslot);
 string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=pool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 if(key_pressed(KEY_TAB) and shufflekey==1)
@@ -206,13 +206,13 @@ if(shufflefeedback==1)
 switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
-if(pool.sound_is_playing(musicslot))
+if(musicpool.sound_is_playing(musicslot))
 {
 musictype="3dyw";
-pool.destroy_sound(musicslot);
+musicpool.destroy_sound(musicslot);
 string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=pool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 if(key_pressed(KEY_SPACE) and shufflekey==1)
@@ -222,13 +222,13 @@ if(shufflefeedback==1)
 switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
-if(pool.sound_is_playing(musicslot))
+if(musicpool.sound_is_playing(musicslot))
 {
 musictype="gc";
-pool.destroy_sound(musicslot);
+musicpool.destroy_sound(musicslot);
 string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=pool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 if(key_pressed(KEY_BACK) and shufflekey==1)
@@ -238,28 +238,28 @@ if(shufflefeedback==1)
 switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
-if(pool.sound_is_playing(musicslot))
+if(musicpool.sound_is_playing(musicslot))
 {
 musictype="stw";
-pool.destroy_sound(musicslot);
+musicpool.destroy_sound(musicslot);
 string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=pool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 if(key_pressed(KEY_RETURN) and resumekey==1)
 {
-if(pool.sound_is_playing(musicslot))
+if(musicpool.sound_is_playing(musicslot))
 {
 if(pausefeedback==1)  switchslot=pool.play_stationary("sounds/misc/pause.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-pool.pause_sound(musicslot);
+musicpool.pause_sound(musicslot);
 }
 else
 {
 if(resumefeedback==1)  switchslot=pool.play_stationary("sounds/misc/play.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-pool.resume_sound(musicslot);
+musicpool.resume_sound(musicslot);
 }
 }
 if(key_pressed(KEY_BACKSLASH) and shufflesoundkey==1)
@@ -336,7 +336,7 @@ if(applock==0)
 {
 speak("keys locked");
 musicvolume=-10;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 switchslot=pool.play_stationary("sounds/misc/lock.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 applock=1;
@@ -366,7 +366,7 @@ else if(applock==1)
 {
 speak("keys unlocked");
 musicvolume=0;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 switchslot=pool.play_stationary("sounds/misc/unlock.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 applock=0;
@@ -402,7 +402,7 @@ exit();
 }
 void fade_multi_pool(int fade_mode=0)
 {
-sound_pool@[] pools={pool};    
+sound_pool@[] pools={musicpool};    
 if(fade_mode==0)
 {
 fade_pitch_pool(pools);
@@ -475,7 +475,7 @@ if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",fal
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicvolume/1+49+"percent");
 musicvolume-=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 else if(spokenvalues==0)
@@ -483,7 +483,7 @@ else if(spokenvalues==0)
 if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicvolume-=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 }
@@ -498,7 +498,7 @@ if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",fal
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicvolume/1+51+"percent");
 musicvolume+=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 else if(spokenvalues==0)
@@ -506,7 +506,7 @@ else if(spokenvalues==0)
 if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicvolume+=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 }
@@ -521,14 +521,14 @@ if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",fal
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicvolume/1+45+"percent");
 musicvolume-=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
 {
 if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicvolume-=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 }
@@ -542,14 +542,14 @@ if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",fal
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicvolume/1+55+"percent");
 musicvolume+=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
 {
 if(volsound==1) switchslot=pool.play_stationary("sounds/misc/voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicvolume+=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 }
@@ -563,7 +563,7 @@ if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpitch/2-1+"percent");
 musicpitch-=2;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 else if(spokenvalues==0)
@@ -571,7 +571,7 @@ else if(spokenvalues==0)
 if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpitch-=2;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 }
@@ -586,7 +586,7 @@ if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpitch/2+1+"percent");
 musicpitch+=2;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 else if(spokenvalues==0)
@@ -594,7 +594,7 @@ else if(spokenvalues==0)
 if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpitch+=2;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 }
@@ -609,14 +609,14 @@ if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpitch/2-5+"percent");
 musicpitch-=10;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpitch-=10;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 }
@@ -630,14 +630,14 @@ if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpitch/2+5+"percent");
 musicpitch+=10;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("sounds/misc/pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpitch+=10;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 }
@@ -651,7 +651,7 @@ if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",fals
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpan/1+49+"percent");
 musicpan-=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 else if(spokenvalues==0)
@@ -659,7 +659,7 @@ else if(spokenvalues==0)
 if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpan-=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 }
@@ -674,7 +674,7 @@ if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",fals
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpan/1+51+"percent");
 musicpan+=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 else if(spokenvalues==0)
@@ -682,7 +682,7 @@ else if(spokenvalues==0)
 if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpan+=1;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
 }
@@ -697,14 +697,14 @@ if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",fals
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpan/1+45+"percent");
 musicpan-=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
 {
 if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpan-=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 }
@@ -718,14 +718,14 @@ if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",fals
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 speak(musicpan/1+55+"percent");
 musicpan+=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
 {
 if(pansound==1) switchslot=pool.play_stationary("sounds/misc/panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpan+=5;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 }
@@ -739,7 +739,7 @@ else if(musicvolume<=0 and resetvolume==1)
 {
 speak("volume reset");
 musicvolume=0;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 void reset_pan()
@@ -752,7 +752,7 @@ else if(musicpan<=50 and resetpan==1)
 {
 speak("pan reset");
 musicpan=0;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
 void reset_pitch()
@@ -765,6 +765,6 @@ else if(musicpitch<=200 and resetpitch==1)
 {
 speak("pitch reset");
 musicpitch=100;
-pool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }

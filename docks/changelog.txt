@@ -1,3 +1,5 @@
+new in 2.1
+Minor bug fixes.
 new in 2.0
 Updated the readme file with added keyboard shortcuts.
 Made the Semicolon key not speak the currently focused music folder if the key has been in a locked state.
