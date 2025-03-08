@@ -142,26 +142,24 @@ if(shift_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
 {
+pool.play_stationary("sounds/misc/prev.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
 musictype2=get_new_track(musictype2,1);
 musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
-pool.play_stationary("sounds/misc/prev.wav",false);
-speak(string_replace(musictype2, ".ogg", "", true));
 }
 }
 if(key_repeating(KEY_RIGHT) and shufflekey==1)
 {
+pool.play_stationary("sounds/misc/next.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
 musictype2=get_new_track(musictype2,2);
 musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
-pool.play_stationary("sounds/misc/next.wav",false);
-speak(string_replace(musictype2, ".ogg", "", true));
 }
 }
 if(key_repeating(KEY_UP) and fadetime!=100)
@@ -301,7 +299,7 @@ if(key_pressed(KEY_APOSTROPHE) and speakmuskey==1)
 {
 speak("You're currently playing "+string_replace(musictype2, ".ogg", "", true));
 }
-if(key_pressed(KEY_G) and shufflekey==1)
+if(key_repeating(KEY_G) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
@@ -316,7 +314,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,tru
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_pressed(KEY_R) and shufflekey==1)
+if(key_repeating(KEY_R) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
@@ -332,7 +330,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_pressed(KEY_TAB) and shufflekey==1)
+if(key_repeating(KEY_TAB) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
@@ -364,7 +362,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_pressed(KEY_BACK) and shufflekey==1)
+if(key_repeating(KEY_BACK) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {

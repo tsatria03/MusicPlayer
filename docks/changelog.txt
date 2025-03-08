@@ -1,4 +1,5 @@
 new in 2.1
+Made it so holding shift and pressing the left or right arrow keys doesn't anounce the music track as it's being skipped.
 Added sound feadback for skipping music. These were obtained from the spotify app, to make things sound more realistic.
 Added the Apostrophe key to keep track of wich music track you're currently playing. This is mainly useful for skipping purposes, and you want to remember wich track you were on prior to skipping the music.
 You can now hold shift and press left and right arrows to quickly go through all of the music tracks in the folder you're currently focused on.
