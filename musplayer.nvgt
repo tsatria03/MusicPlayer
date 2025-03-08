@@ -114,6 +114,15 @@ string get_new_track(string track, int direction)
     return strip_directory(tracklist[trackindex]); // Return new track name
 }
 
+string strip_extension(string filename)
+{
+    int dotIndex = filename.rfind("."); // Find last dot
+    if (dotIndex != -1)
+    {
+        return filename.substr(0, dotIndex); // Return everything before the dot
+    }
+    return filename; // If no dot is found, return the original filename
+}
 string strip_directory(string path)
 {
     int lastSlash = path.rfind("/"); // Find the last forward slash
@@ -142,7 +151,8 @@ if(shift_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
 {
-pool.play_stationary("sounds/misc/prev.wav",false);
+switchslot=pool.play_stationary("sounds/misc/prev.wav",false);
+pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -153,7 +163,8 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and shufflekey==1)
 {
-pool.play_stationary("sounds/misc/next.wav",false);
+switchslot=pool.play_stationary("sounds/misc/next.wav",false);
+pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -297,7 +308,7 @@ speak("You're currently focused on the "+musictype+" music folder.");
 }
 if(key_pressed(KEY_APOSTROPHE) and speakmuskey==1)
 {
-speak("You're currently playing "+string_replace(musictype2, ".ogg", "", true));
+speak("You're currently playing " + strip_extension(musictype2)+" from the "+musictype+" music folder.");
 }
 if(key_repeating(KEY_G) and shufflekey==1)
 {
@@ -325,8 +336,8 @@ if(musicpool.sound_is_playing(musicslot))
 {
 musictype=get_new_albom(musictype,3);
 musicpool.destroy_sound(musicslot);
-string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musictype2=get_new_track(musictype2,3);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
@@ -341,8 +352,8 @@ if(musicpool.sound_is_playing(musicslot))
 {
 musictype="3dyw";
 musicpool.destroy_sound(musicslot);
-string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musictype2=get_new_track(musictype2,3);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
@@ -357,8 +368,8 @@ if(musicpool.sound_is_playing(musicslot))
 {
 musictype="gc";
 musicpool.destroy_sound(musicslot);
-string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musictype2=get_new_track(musictype2,3);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
@@ -373,8 +384,8 @@ if(musicpool.sound_is_playing(musicslot))
 {
 musictype="stw";
 musicpool.destroy_sound(musicslot);
-string[] tracks=find_files("sounds/music/"+musictype+"/music*");
-musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+tracks[random(0,tracks.length()-1)],true);
+musictype2=get_new_track(musictype2,3);
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }

@@ -1,4 +1,5 @@
 new in 2.1
+Fixed a bug where shuffeling music with the Tab, Space, and Backspace keys didn't reflect the change in the track when pressing Apostrophe to check wich music was being played.
 Added 10 plus tracks from the game rocococo audio Fantastique to the rocococo folder.
 Made it so holding shift and pressing the left or right arrow keys doesn't anounce the music track as it's being skipped.
 Added sound feadback for skipping music. These were obtained from the spotify app, to make things sound more realistic.
