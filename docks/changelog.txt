@@ -1,4 +1,8 @@
 new in 2.1
+Added the Apostrophe key to keep track of wich music track you're currently playing. This is mainly useful for skipping purposes, and you want to remember wich track you were on prior to skipping the music.
+You can now hold shift and press left and right arrows to quickly go through all of the music tracks in the folder you're currently focused on.
+Holding shift and pressing the letter M will anounce the fade timer's value in ms.
+Added the ability to adjust the fade time of the music by holding shift and pressing the up or down arrow keys. This change applies to pausing and resuming the track, as well as exiting the program.
 The pitch of the music will now fade up or down depending on the playback state of the track.
 Minor bug fixes.
 new in 2.0
@@ -73,10 +77,10 @@ If the timer adjuster is turned off, and you press the letter M, the speech will
 If the music is paused, and you press the letter U, the speech will notify you that the timer adjuster can't be enabled unless the music is resumed.
 You can now completely disable the wait timer feature by pressing the letter U. When you do this, pressing the up or down arrow key will no longer change the timer to reflect how fast the music parameters can be adjusted. If you would like to re enable this feature, pressing the letter U will turn it back on to be used again.
 Added sound feedback for adjusting the wait timer. These were obtained from the game survive the whild.
-The timer upper limit is now fixed to 500. The parameter can no longer go abuv this vallue.
-The timer lower limit is now fixed to 100. The parameter can no longer go below this vallue.
-Pressing the up or down arrow key will now anounce the timer's value as you change it.
-Pressing the letter M will anounce the timer's value in ms.
+The wait timer upper limit is now fixed to 500. The parameter can no longer go abuv this vallue.
+The wait timer lower limit is now fixed to 100. The parameter can no longer go below this vallue.
+Pressing the up or down arrow key will now anounce the wait timer's value as you change it.
+Pressing the letter M will anounce the wait timer's value in ms.
 new in 1.4
 Added the ability to adjust the wait timer for controling various parameters. Previously, the wait timer was fixed at a certain amount so people couldn't instently change things like volume or pitch at a sooper fast rate. Now you are allowed to change that according to how you like it. Pressing the up or down arrow key will either increase or decrease the timer. This timer applys to all controlable parameters, except for when you press the letters w, s, f, j, z, and c.
 If the music is paused, and you press the backslash key, the speech will notify you that the shuffle sound can't be enabled unless the music is resumed.
