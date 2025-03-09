@@ -226,17 +226,39 @@ speak("fade timer,"+fadetime+"ms");
 }
 if(key_repeating(KEY_LEFT) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and shufflekey==1)
 {
-musictype=get_new_album(musictype,1);
 switchslot=pool.play_stationary("sounds/misc/foldchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musictype);
+if(musicpool.sound_is_playing(musicslot))
+{
+musicpool.destroy_sound(musicslot);
+musictype=get_new_album(musictype,1);
+string[] tracks = find_files("sounds/music/" + musictype + "/music*");
+if (tracks.length() > 0)
+{
+musictype2 = strip_directory(tracks[0]);
+playingMusictype = musictype;
+}
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+}
 }
 if(key_repeating(KEY_RIGHT) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and shufflekey==1)
 {
-musictype=get_new_album(musictype,2);
 switchslot=pool.play_stationary("sounds/misc/foldchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musictype);
+if(musicpool.sound_is_playing(musicslot))
+{
+musicpool.destroy_sound(musicslot);
+musictype=get_new_album(musictype,2);
+string[] tracks = find_files("sounds/music/" + musictype + "/music*");
+if (tracks.length() > 0)
+{
+musictype2 = strip_directory(tracks[0]);
+playingMusictype = musictype;
+}
+musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
+musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
+}
 }
 if(key_repeating(KEY_UP) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and effectstime!=500)
 {
