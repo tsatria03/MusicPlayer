@@ -6,7 +6,7 @@ Added sound feadback for skipping music. These were obtained from the spotify ap
 Added the Apostrophe key to keep track of wich music track you're currently playing. This is mainly useful for skipping purposes, and you want to remember wich track you were on prior to skipping the music.
 You can now hold shift and press left and right arrows to quickly go through all of the music tracks in the folder you're currently focused on.
 Holding shift and pressing the letter M will anounce the fade timer's value in ms.
-Added the ability to adjust the fade time of the music by holding shift and pressing the up or down arrow keys. This change applies to pausing and resuming the track, as well as exiting the program.
+Added the ability to adjust the fade time of the music by holding shift and pressing the up or down arrow keys. This change applies to pausing and resuming the track.
 The pitch of the music will now fade up or down depending on the playback state of the track.
 Minor bug fixes.
 new in 2.0
