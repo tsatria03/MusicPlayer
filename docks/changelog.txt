@@ -1,3 +1,7 @@
+new in 2.2
+Fixed the music inside of the sbyw folder to include longer versions of the music that was previously there.
+Added sound feedback for exiting the app. This was obtained from an old IOS sounds folder.
+Pressing the escape key will now fade the volume of the music instead of fading the pitch upon exiting the program.
 new in 2.1
 Fixed a bug where shuffeling music with the Tab, Space, and Backspace keys didn't reflect the change in the track when pressing Apostrophe to check wich music was being played.
 Added 10 plus tracks from the game rocococo audio Fantastique to the rocococo folder.
