@@ -1,4 +1,7 @@
 new in 2.2
+Fixed an Issue where holding and pressing the Shift + Left and Right Arrow keys to change tracks would cause the Apostrophe key announcement to incorrectly state the name of the focused folder instead of the actual playing folder.
+Updated the currently playing music folder to match the actual folder where the new track is being played. Now, when switching tracks within the same folder, the Apostrophe key announcement correctly reflects the folder that the playing track belongs to.
+Made it so the app randomizes music from the folders that are currently on the disk at startup, not just the music tracks found in the spesified folder.
 Fixed the music inside of the sbyw folder to include longer versions of the music that was previously there.
 Added sound feedback for exiting the app. This was obtained from an old IOS sounds folder.
 Pressing the escape key will now fade the volume of the music instead of fading the pitch upon exiting the program.
