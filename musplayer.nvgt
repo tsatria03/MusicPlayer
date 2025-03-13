@@ -12,6 +12,8 @@ sound_pool pool, musicpool;
 timer effectstimer, fadetimer;
 void main()
 {
+set_sound_storage("data/misc.dat");
+set_sound_decryption_key("yLnhpXN6@VL=DP&o*7O#Uz)tNHR?!tJUaQ4RP9MO%=ZjL9B",true);
 show_game_window("music player, version "+version);
 musplay();
 }
