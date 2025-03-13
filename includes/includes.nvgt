@@ -1,0 +1,8 @@
+#include"bgt_compat.nvgt"
+#include"sound_pool.nvgt"
+#include"speech.nvgt"
+#include"dlgplayer.nvgt"
+#include"extrafuncts.nvgt"
+#include"effects.nvgt"
+#include"fadepool.nvgt"
+typedef uint8 usmall; typedef int8 small;
