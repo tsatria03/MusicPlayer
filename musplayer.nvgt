@@ -23,6 +23,7 @@ if (albums.length() > 0)
 musictype = albums[random(0, albums.length() - 1)];
 }
 string[] tracks = find_files("sounds/music/" + musictype + "/music*");
+tracks.sort(natural_number_sort);
 if (tracks.length() > 0)
 {
 musictype2 = strip_directory(tracks[random(0, tracks.length() - 1)]);
@@ -93,6 +94,7 @@ if(musicpool.sound_is_playing(musicslot))
 musicpool.destroy_sound(musicslot);
 musictype=get_new_album(musictype,1);
 string[] tracks = find_files("sounds/music/" + musictype + "/music*");
+tracks.sort(natural_number_sort);
 if (tracks.length() > 0)
 {
 musictype2 = strip_directory(tracks[0]);
@@ -111,6 +113,7 @@ if(musicpool.sound_is_playing(musicslot))
 musicpool.destroy_sound(musicslot);
 musictype=get_new_album(musictype,2);
 string[] tracks = find_files("sounds/music/" + musictype + "/music*");
+tracks.sort(natural_number_sort);
 if (tracks.length() > 0)
 {
 musictype2 = strip_directory(tracks[0]);

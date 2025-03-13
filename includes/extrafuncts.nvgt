@@ -26,6 +26,7 @@ return false;
 string get_new_album(string album,int direction)
 {
 string[] albumlist=find_directories("sounds/music/*");
+albumlist.sort(natural_number_sort);
 int albumindex=-1;
 for (uint i=0; i<albumlist.length(); i++)
 {
@@ -61,6 +62,7 @@ return albumlist[albumindex];
 string get_new_track(string track, int direction)
 {
     string[] tracklist = find_files("sounds/music/" + musictype + "/music*");    
+tracklist.sort(natural_number_sort);
     if (tracklist.length() == 0)
         return track;
     int trackindex = -1;
