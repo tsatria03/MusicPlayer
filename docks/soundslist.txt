@@ -1,0 +1,21 @@
+exit.wav
+foldchange.wav
+lock.wav
+medalbutton1.ogg
+medalbutton2.ogg
+medalbutton3.ogg
+next.wav
+panchange.wav
+pause.wav
+pitchchange.ogg
+play.wav
+prev.wav
+shake1.wav
+shake2.wav
+switchoff.ogg
+switchon.ogg
+toggleoff.ogg
+toggleon.ogg
+unlock.wav
+voluchange.wav
+total files: 20

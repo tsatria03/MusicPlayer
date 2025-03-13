@@ -40,7 +40,7 @@ if(shift_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
 {
-switchslot=pool.play_stationary("sounds/misc/prev.wav",false);
+switchslot=pool.play_stationary("prev.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -53,7 +53,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and shufflekey==1)
 {
-switchslot=pool.play_stationary("sounds/misc/next.wav",false);
+switchslot=pool.play_stationary("next.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -69,7 +69,7 @@ if(key_repeating(KEY_UP) and fadetime!=100)
 if(timeadjust==1)
 {
 speak(fadetime+10+"ms");
-pool.play_stationary("sounds/misc/medalbutton"+random(1,3)+".ogg",false);
+pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 fadetime+=10;
 }
 }
@@ -78,7 +78,7 @@ if(key_repeating(KEY_DOWN) and fadetime!=10)
 if(timeadjust==1)
 {
 speak(fadetime-10+"ms");
-pool.play_stationary("sounds/misc/medalbutton"+random(1,3)+".ogg",false);
+pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 fadetime-=10;
 }
 }
@@ -89,7 +89,7 @@ speak("fade timer,"+fadetime+"ms");
 }
 if(key_repeating(KEY_LEFT) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and shufflekey==1)
 {
-switchslot=pool.play_stationary("sounds/misc/foldchange.wav",false);
+switchslot=pool.play_stationary("foldchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -108,7 +108,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and shufflekey==1)
 {
-switchslot=pool.play_stationary("sounds/misc/foldchange.wav",false);
+switchslot=pool.play_stationary("foldchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -130,7 +130,7 @@ if(key_repeating(KEY_UP) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and effec
 if(timeadjust==1)
 {
 speak(effectstime+50+"ms");
-pool.play_stationary("sounds/misc/medalbutton"+random(1,3)+".ogg",false);
+pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 effectstime+=50;
 }
 }
@@ -139,7 +139,7 @@ if(key_repeating(KEY_DOWN) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and eff
 if(timeadjust==1)
 {
 speak(effectstime-50+"ms");
-pool.play_stationary("sounds/misc/medalbutton"+random(1,3)+".ogg",false);
+pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 effectstime-=50;
 }
 }
@@ -231,7 +231,7 @@ if(key_repeating(KEY_G) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
+switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
 if(musicpool.sound_is_playing(musicslot))
@@ -246,7 +246,7 @@ if(key_repeating(KEY_R) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
+switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
 if(musicpool.sound_is_playing(musicslot))
@@ -263,7 +263,7 @@ if(key_repeating(KEY_TAB) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
+switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
 if(musicpool.sound_is_playing(musicslot))
@@ -280,7 +280,7 @@ if(key_repeating(KEY_SPACE) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
+switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
 if(musicpool.sound_is_playing(musicslot))
@@ -297,7 +297,7 @@ if(key_repeating(KEY_BACK) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("sounds/misc/shake"+random(1,2)+".wav",false);
+switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 }
 if(musicpool.sound_is_playing(musicslot))
@@ -314,14 +314,14 @@ if(key_repeating(KEY_RETURN) and resumekey==1)
 {
 if(musicpool.sound_is_playing(musicslot))
 {
-if(pausefeedback==1)  switchslot=pool.play_stationary("sounds/misc/pause.wav",false);
+if(pausefeedback==1)  switchslot=pool.play_stationary("pause.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 fade_pitch_pool(musicpool, target_pitch:20, mode:0);
 musicpool.pause_sound(musicslot);
 }
 else
 {
-if(resumefeedback==1)  switchslot=pool.play_stationary("sounds/misc/play.wav",false);
+if(resumefeedback==1)  switchslot=pool.play_stationary("play.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 musicpool.resume_sound(musicslot);
 fade_pitch_pool(musicpool, target_pitch:musicpitch, mode:1);
@@ -332,13 +332,13 @@ if(key_pressed(KEY_BACKSLASH) and shufflesoundkey==1)
 {
 if(shufflefeedback==1)
 {
-pool.play_stationary_extended("sounds/misc/switchoff.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("switchoff.ogg",false,0,0,-5,100,false);
 speak("shuffle sounds off");
 shufflefeedback=0;
 }
 else
 {
-pool.play_stationary_extended("sounds/misc/switchon.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("switchon.ogg",false,0,0,-5,100,false);
 speak("shuffle sounds on");
 shufflefeedback=1;
 }
@@ -347,14 +347,14 @@ if(key_pressed(KEY_X) and playsoundkey==1)
 {
 if(pausefeedback==1 and resumefeedback==1)
 {
-pool.play_stationary_extended("sounds/misc/switchoff.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("switchoff.ogg",false,0,0,-5,100,false);
 speak("playback sounds off");
 pausefeedback=0;
 resumefeedback=0;
 }
 else
 {
-pool.play_stationary_extended("sounds/misc/switchon.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("switchon.ogg",false,0,0,-5,100,false);
 speak("playback sounds on");
 pausefeedback=1;
 resumefeedback=1;
@@ -364,7 +364,7 @@ if(key_pressed(KEY_B) and paramsoundkey==1)
 {
 if(volsound==1 and pansound==1 and pitchsound==1)
 {
-pool.play_stationary_extended("sounds/misc/switchoff.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("switchoff.ogg",false,0,0,-5,100,false);
 speak("adjustment sounds off");
 volsound=0;
 pansound=0;
@@ -372,7 +372,7 @@ pitchsound=0;
 }
 else
 {
-pool.play_stationary_extended("sounds/misc/switchon.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("switchon.ogg",false,0,0,-5,100,false);
 speak("adjustment sounds on");
 volsound=1;
 pansound=1;
@@ -383,7 +383,7 @@ if(key_pressed(KEY_U) and timekey==1)
 {
 if(timeadjust==1)
 {
-pool.play_stationary_extended("sounds/misc/toggleoff.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("toggleoff.ogg",false,0,0,-5,100,false);
 speak("timer adjustments off");
 effectstime=500;
 fadetime=100;
@@ -391,7 +391,7 @@ timeadjust=0;
 }
 else
 {
-pool.play_stationary_extended("sounds/misc/toggleon.ogg",false,0,0,-5,100,false);
+pool.play_stationary_extended("toggleon.ogg",false,0,0,-5,100,false);
 speak("timer adjustments on");
 effectstime=250;
 fadetime=50;
@@ -403,7 +403,7 @@ if(key_pressed(KEY_Y))
 if(applock==0)
 {
 speak("keys locked");
-switchslot=pool.play_stationary("sounds/misc/lock.wav",false);
+switchslot=pool.play_stationary("lock.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 applock=1;
 exitapp=0;
@@ -431,7 +431,7 @@ resetpitch=0;
 else if(applock==1)
 {
 speak("keys unlocked");
-switchslot=pool.play_stationary("sounds/misc/unlock.wav",false);
+switchslot=pool.play_stationary("unlock.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
 applock=0;
 exitapp=1;
@@ -461,13 +461,13 @@ if(key_pressed(KEY_ESCAPE) and exitapp==1)
 {
 if(musicpool.sound_is_playing(musicslot))
 {
-pool.play_stationary("sounds/misc/exit.wav",false);
+pool.play_stationary("exit.wav",false);
 fade_volume_pool(musicpool);
 exit();
 }
 else
 {
-dlgplay("sounds/misc/exit.wav");
+dlgplay("exit.wav");
 exit();
 }
 }
