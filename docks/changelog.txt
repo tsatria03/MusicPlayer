@@ -1,5 +1,6 @@
 new in 2.3
-Made it so the pitch upper limit is now increased to 500. The parameter can no longer go abuv this vallue. This will also apply to resetting the pitch back to default upon pressing the letter P.
+Fixed a bug where music effects weren't being reset propperly when they were being adjusted passed the recommended thresholds upon pressing the letters L, P, and T.
+Made it so the pitch upper limit is now increased to 500. The parameter can no longer go abuv this vallue. This will also apply to resetting the pitch back to default upon pressing the letter T.
 Made it so the pitch lower limit is now increased to 10. The parameter can no longer go below this vallue. This will also apply to fading the pitch upon pausing and resuming the music.
 Made it so pressing the letters W or S will now anounce the volume in actuall values when adjusted, not in percentages.
 Made it so pressing the letters Z or C will now anounce the pan in actuall values when adjusted, not in percentages.

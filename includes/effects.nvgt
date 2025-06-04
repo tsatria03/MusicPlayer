@@ -268,7 +268,7 @@ if(musicvolume==0 and resetvolume==1)
 {
 speak("Volume is already reset.");
 }
-else if(musicvolume<=0 and resetvolume==1)
+else if(musicvolume<=0 || musicvolume>=0 and resetvolume==1)
 {
 speak("volume reset");
 musicvolume=0;
@@ -281,7 +281,7 @@ if(musicpan==0 and resetpan==1)
 {
 speak("Pan is already reset.");
 }
-else if(musicpan<=50 and resetpan==1)
+else if(musicpan<=50 || musicpan>=50 and resetpan==1)
 {
 speak("pan reset");
 musicpan=0;
@@ -294,7 +294,7 @@ if(musicpitch==100 and resetpitch==1)
 {
 speak("Pitch is already reset");
 }
-else if(musicpitch<=500 and resetpitch==1)
+else if(musicpitch<=500 || musicpitch>=500 and resetpitch==1)
 {
 speak("pitch reset");
 musicpitch=100;
