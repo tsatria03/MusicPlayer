@@ -6,7 +6,7 @@ if(spokenvalues==1)
 {
 if(volsound==1) switchslot=pool.play_stationary("voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicvolume/1+49+"percent");
+speak(musicvolume-1);
 musicvolume-=1;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
@@ -29,7 +29,7 @@ if(spokenvalues==1)
 {
 if(volsound==1) switchslot=pool.play_stationary("voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicvolume/1+51+"percent");
+speak(musicvolume+1);
 musicvolume+=1;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
@@ -52,7 +52,7 @@ if(spokenvalues==1)
 {
 if(volsound==1) switchslot=pool.play_stationary("voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicvolume/1+45+"percent");
+speak(musicvolume-5);
 musicvolume-=5;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
@@ -73,7 +73,7 @@ if(spokenvalues==1)
 {
 if(volsound==1) switchslot=pool.play_stationary("voluchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicvolume/1+55+"percent");
+speak(musicvolume+5);
 musicvolume+=5;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
@@ -88,14 +88,14 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 void pitch_scroll_down()
 {
-if(pitchadjust==1 and musicpitch!=0 and effectstimer.elapsed>=effectstime)
+if(pitchadjust==1 and musicpitch!=10 and effectstimer.elapsed>=effectstime)
 {
 if(spokenvalues==1)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpitch/2-1+"percent");
-musicpitch-=2;
+speak(musicpitch-1);
+musicpitch-=1;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
@@ -111,14 +111,14 @@ effectstimer.restart();
 }
 void pitch_scroll_up()
 {
-if(pitchadjust==1 and musicpitch!=200 and effectstimer.elapsed>=effectstime)
+if(pitchadjust==1 and musicpitch!=500 and effectstimer.elapsed>=effectstime)
 {
 if(spokenvalues==1)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpitch/2+1+"percent");
-musicpitch+=2;
+speak(musicpitch+1);
+musicpitch+=1;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
 }
@@ -134,14 +134,14 @@ effectstimer.restart();
 }
 void pitch_step_down()
 {
-if(pitchadjust==1 and musicpitch!=0)
+if(pitchadjust==1 and musicpitch!=10)
 {
 if(spokenvalues==1)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpitch/2-5+"percent");
-musicpitch-=10;
+speak(musicpitch-5);
+musicpitch-=5;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
@@ -155,14 +155,14 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 void pitch_step_up()
 {
-if(pitchadjust==1 and musicpitch!=200)
+if(pitchadjust==1 and musicpitch!=500)
 {
 if(spokenvalues==1)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("pitchchange.ogg",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpitch/2+5+"percent");
-musicpitch+=10;
+speak(musicpitch+5);
+musicpitch+=5;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 else if(spokenvalues==0)
@@ -182,7 +182,7 @@ if(spokenvalues==1)
 {
 if(pansound==1) switchslot=pool.play_stationary("panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpan/1+49+"percent");
+speak(musicpan-1);
 musicpan-=1;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
@@ -205,7 +205,7 @@ if(spokenvalues==1)
 {
 if(pansound==1) switchslot=pool.play_stationary("panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpan/1+51+"percent");
+speak(musicpan+1);
 musicpan+=1;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 effectstimer.restart();
@@ -228,7 +228,7 @@ if(spokenvalues==1)
 {
 if(pansound==1) switchslot=pool.play_stationary("panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpan/1+45+"percent");
+speak(musicpan-5);
 musicpan-=5;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
@@ -249,7 +249,7 @@ if(spokenvalues==1)
 {
 if(pansound==1) switchslot=pool.play_stationary("panchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-speak(musicpan/1+55+"percent");
+speak(musicpan+5);
 musicpan+=5;
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
@@ -294,7 +294,7 @@ if(musicpitch==100 and resetpitch==1)
 {
 speak("Pitch is already reset");
 }
-else if(musicpitch<=200 and resetpitch==1)
+else if(musicpitch<=500 and resetpitch==1)
 {
 speak("pitch reset");
 musicpitch=100;

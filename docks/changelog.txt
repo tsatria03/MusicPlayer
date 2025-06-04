@@ -1,4 +1,12 @@
 new in 2.3
+Made it so the pitch upper limit is now increased to 500. The parameter can no longer go abuv this vallue. This will also apply to resetting the pitch back to default upon pressing the letter P.
+Made it so the pitch lower limit is now increased to 10. The parameter can no longer go below this vallue. This will also apply to fading the pitch upon pausing and resuming the music.
+Made it so pressing the letters W or S will now anounce the volume in actuall values when adjusted, not in percentages.
+Made it so pressing the letters Z or C will now anounce the pan in actuall values when adjusted, not in percentages.
+Made it so pressing the letters F or J will now anounce the pitch in actuall values when adjusted, not in percentages.
+Made it so pressing the letter V will now anounce the current volume in actuall values, not in percentages.
+Made it so pressing the letter N will now anounce the current pan in actuall values, not in percentages.
+Made it so pressing the letter H will now anounce the current pitch in actuall values, not in percentages.
 Made it so you can hold the control or shift key modifier to skip tracks and perform other actions.
 new in 2.2
 Removed most of the music folders. From now on, there will only be 10 folders at present moving forward.

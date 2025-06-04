@@ -1,7 +1,7 @@
 #pragma document docks
 #pragma embed "data/assets.pl"
 #include"includes/includes.nvgt"
-double musicvolume=0, musicmaxvolume=120, musicpan=0, musicmaxpan=100, musicpitch=100, musicmaxpitch=200;
+double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
 int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, shufflefeedback=1, timeadjust=1, effectstime=250, fadetime=50;
 int speakmuskey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
@@ -199,15 +199,15 @@ pan_step_up();
 }
 if(key_pressed(KEY_V) and spokenvolume==1)
 {
-speak("music volume,"+round(musicvolume+60/musicmaxvolume*100,2)+"percent");
+speak("music volume, "+musicvolume);
 }
 if(key_pressed(KEY_N) and spokenpan==1)
 {
-speak("music pan,"+round(musicpan+50/musicmaxpan*100,2)+"percent");
+speak("music pan, "+musicpan);
 }
 if(key_pressed(KEY_H) and spokenpitch==1)
 {
-speak("music pitch,"+round(musicpitch/musicmaxpitch*100,2)+"percent");
+speak("music pitch,"+musicpitch);
 }
 if(key_pressed(KEY_L))
 {
@@ -318,7 +318,7 @@ if(musicpool.sound_is_playing(musicslot))
 {
 if(pausefeedback==1)  switchslot=pool.play_stationary("pause.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
-fade_pitch_pool(musicpool, target_pitch:20, mode:0);
+fade_pitch_pool(musicpool, target_pitch:10, mode:0);
 musicpool.pause_sound(musicslot);
 }
 else
