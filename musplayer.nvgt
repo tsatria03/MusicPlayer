@@ -209,15 +209,15 @@ if(key_pressed(KEY_H) and spokenpitch==1)
 {
 speak("music pitch,"+musicpitch);
 }
-if(key_pressed(KEY_L))
+if(key_pressed(KEY_L) and resetvolume==1)
 {
 reset_volume();
 }
-if(key_pressed(KEY_P))
+if(key_pressed(KEY_P) and resetpan==1)
 {
 reset_pan();
 }
-if(key_pressed(KEY_T))
+if(key_pressed(KEY_T) and resetpitch==1)
 {
 reset_pitch();
 }
