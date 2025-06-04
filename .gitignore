@@ -1,6 +1,6 @@
 *.ogg
 *.wav
-New File.txt
+New File*.txt
+lib/
 releases/
 sounds/
-New File*.txt

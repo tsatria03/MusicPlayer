@@ -7,7 +7,7 @@ int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=1, spokenvolume=1, 
 string musictype="3dyw";
 string musictype2="music1";
 string playingMusictype=musictype;
-string version="2.2";
+string version="2.3";
 sound_pool pool, musicpool;
 timer effectstimer, fadetimer;
 void main()
@@ -36,7 +36,7 @@ musicpool.update_sound_start_values(musicslot, musicpan, musicvolume, musicpitch
 while(true)
 {
 wait(5);
-if(shift_is_down())
+if(control_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
 {
@@ -87,7 +87,7 @@ if(key_pressed(KEY_M) and timeadjust==1)
 speak("fade timer,"+fadetime+"ms");
 }
 }
-if(key_repeating(KEY_LEFT) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and shufflekey==1)
+if(key_repeating(KEY_LEFT) and key_up(KEY_LCONTROL) and key_up(KEY_RCONTROL) and shufflekey==1)
 {
 switchslot=pool.play_stationary("foldchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
@@ -106,7 +106,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,tru
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_repeating(KEY_RIGHT) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and shufflekey==1)
+if(key_repeating(KEY_RIGHT) and key_up(KEY_LCONTROL) and key_up(KEY_RCONTROL) and shufflekey==1)
 {
 switchslot=pool.play_stationary("foldchange.wav",false);
 pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
@@ -125,7 +125,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,tru
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_repeating(KEY_UP) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and effectstime!=500)
+if(key_repeating(KEY_UP) and key_up(KEY_LCONTROL) and key_up(KEY_RCONTROL) and effectstime!=500)
 {
 if(timeadjust==1)
 {
@@ -134,7 +134,7 @@ pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 effectstime+=50;
 }
 }
-if(key_repeating(KEY_DOWN) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and effectstime!=50)
+if(key_repeating(KEY_DOWN) and key_up(KEY_LCONTROL) and key_up(KEY_RCONTROL) and effectstime!=50)
 {
 if(timeadjust==1)
 {
@@ -143,7 +143,7 @@ pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 effectstime-=50;
 }
 }
-if(key_pressed(KEY_M) and key_up(KEY_LSHIFT) and key_up(KEY_RSHIFT) and timeadjust==1)
+if(key_pressed(KEY_M) and key_up(KEY_LCONTROL) and key_up(KEY_RCONTROL) and timeadjust==1)
 {
 speak("controler timer,"+effectstime+"ms");
 }
