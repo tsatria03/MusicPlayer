@@ -230,7 +230,7 @@ else if (absPan <= 49)
 direction = musicpan < 0 ? "hard left" : "hard right";
 else
 direction = musicpan < 0 ? "full left" : "full right";
-speak("Music pan, " + musicpan + ": " + direction);
+speak("Music pan, " + musicpan + " balance: " + direction);
 }
 if (key_repeating(KEY_H) and spokenpitch == 1)
 {

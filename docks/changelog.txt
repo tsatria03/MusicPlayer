@@ -1,4 +1,5 @@
 new in 2.5
+Reorganized some of the tracks found in various music folders.
 Added spoken feedback to adjusting music pitch. Pressing the letter H will now tell you how high or low the sound is.
 Added spoken feedback to adjusting music volume. Pressing the letter V will now tell you how loud or quiet the sound is.
 Added spoken feedback to adjusting music pan. Pressing the letter N will now tell you how far away the sound is from the stereo field.
