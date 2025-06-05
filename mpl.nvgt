@@ -201,11 +201,25 @@ pan_step_up();
 }
 if(key_repeating(KEY_V) and spokenvolume==1)
 {
-speak("music volume, "+musicvolume);
+speak("music volume, "+musicvolume+" decibels");
 }
-if(key_repeating(KEY_N) and spokenpan==1)
+if (key_repeating(KEY_N) and spokenpan == 1)
 {
-speak("music pan, "+musicpan);
+string direction = "center";
+int absPan = abs(musicpan);
+if (musicpan == 0)
+direction = "center";
+else if (absPan <= 9)
+direction = musicpan < 0 ? "slightly left" : "slightly right";
+else if (absPan <= 24)
+direction = musicpan < 0 ? "moderately left" : "moderately right";
+else if (absPan <= 39)
+direction = musicpan < 0 ? "mostly left" : "mostly right";
+else if (absPan <= 49)
+direction = musicpan < 0 ? "hard left" : "hard right";
+else
+direction = musicpan < 0 ? "full left" : "full right";
+speak("Music pan, " + musicpan + ": " + direction);
 }
 if (key_repeating(KEY_H) and spokenpitch == 1)
 {

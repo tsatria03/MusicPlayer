@@ -1,4 +1,5 @@
 new in 2.5
+Added directional feedback to adjusting music pan. Pressing the letter N will now tell you how far away from the stario field the sound is.
 Made it so the pitch upper limit is now decreased to 400. The parameter can no longer go abuv this vallue. This will also apply to resetting the pitch back to default upon pressing the letter T.
 Made it so the pitch lower limit is now increased to 25. The parameter can no longer go below this vallue. This will also apply to fading the pitch upon pausing and resuming the music.
 Made it so pressing or holding the letters K and I will now adjust the music pitch by 0.1 semitones instead of it's actual value.
