@@ -199,9 +199,20 @@ if (key_pressed(KEY_C))
 {
 pan_step_up();
 }
-if(key_repeating(KEY_V) and spokenvolume==1)
+if (key_repeating(KEY_V) and spokenvolume == 1)
 {
-speak("music volume, "+musicvolume+" decibels");
+string label = "unknown";
+if (musicvolume == 0)
+label = "very loud";
+else if (musicvolume > -10)
+label = "loud";
+else if (musicvolume > -20)
+label = "moderate";
+else if (musicvolume > -35)
+label = "quiet";
+else
+label = "very quiet";
+speak("Music volume, " + musicvolume + " decibels: " + label);
 }
 if (key_repeating(KEY_N) and spokenpan == 1)
 {
@@ -226,7 +237,24 @@ if (key_repeating(KEY_H) and spokenpitch == 1)
 double semitones = 12 * (log(musicpitch / 100.0) / log(2.0));
 if (abs(semitones) < 0.005) semitones = 0.0;
 double semitoneRounded = round(semitones, 2);
-speak("Music pitch, " + semitoneRounded + " semitones");
+string label = "normal";
+if (semitoneRounded > 20)
+label = "extremely high";
+else if (semitoneRounded > 12)
+label = "very high";
+else if (semitoneRounded > 4)
+label = "high";
+else if (semitoneRounded > 0)
+label = "slightly high";
+else if (semitoneRounded < -20)
+label = "extremely low";
+else if (semitoneRounded < -12)
+label = "very low";
+else if (semitoneRounded < -4)
+label = "low";
+else if (semitoneRounded < 0)
+label = "slightly low";
+speak("Music pitch, " + semitoneRounded + " semitones: " + label);
 }
 if(key_repeating(KEY_L) and resetvolume==1)
 {
