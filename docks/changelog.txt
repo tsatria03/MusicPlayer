@@ -1,4 +1,5 @@
 new in 2.4
+Added 50 plus tracks from the game manamon to the manamon folder.
 Added error checking for empty directories found in the music folder. If the folder doesn't contain any albums and or tracks within those albums, the app will just simply run without them.
 Added adjustment sounds to indicate resetting the volume, pan, and pitch of the music.
 Made it so the skip sounds don't get adjusted with the other effects while the music is paused or resumed.
@@ -18,7 +19,7 @@ Made it so pressing the letter N will now anounce the current pan in actuall val
 Made it so pressing the letter H will now anounce the current pitch in actuall values, not in percentages.
 Made it so you can hold the control or shift key modifier to skip tracks and perform other actions.
 new in 2.2
-Removed most of the music folders. From now on, there will only be 10 folders at present moving forward.
+Removed most of the music folders. From now on, there will only be 12 folders in the app at present moving forward.
 Added natural number sorting throughout the program. Navigating between albums and tracks is now more intuitive. This ensures they are ordered numerically, instead of lexicographically. This prevents unexpected jumps when browsing files.
 Made it so the volume of the music doesn't lower itself while the keys are locked.
 Made it so pressing the left or right arrow keys doesn't anounce the music folder as it's being chosen. It will now play the first track it finds in the folder when choosing it.
