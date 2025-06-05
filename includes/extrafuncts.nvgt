@@ -22,6 +22,20 @@ return true;
 }
 return false;
 }
+double clamp(double value, double min, double max)
+{
+value=value<min? min:value;
+value=value>max? max:value;
+return value;
+}
+double min(double a, double b)
+{
+return (a < b) ? a : b;
+}
+double max(double a, double b)
+{
+return (a > b) ? a : b;
+}
 string find_sound(string soundname)
 {
 string[] snd=find_files(soundname);

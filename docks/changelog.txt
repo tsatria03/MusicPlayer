@@ -1,5 +1,10 @@
+new in 2.5
+Made it so the pitch upper limit is now decreased to 400. The parameter can no longer go abuv this vallue. This will also apply to resetting the pitch back to default upon pressing the letter T.
+Made it so the pitch lower limit is now increased to 25. The parameter can no longer go below this vallue. This will also apply to fading the pitch upon pausing and resuming the music.
+Made it so pressing or holding the letters K and I will now adjust the music pitch by 0.1 semitones instead of it's actual value.
 new in 2.4
-Made it so pressing the letter H key will now anounce the semitone of the music pitch along side the actual value.
+Made it so pressing the letters F and J will now adjust the music pitch by 1 semitone instead of it's actual value.
+Made it so pressing the letter H key will now anounce the semitone of the music pitch instead of the actual value.
 Added 50 plus tracks from the game manamon to the manamon folder.
 Added error checking for empty directories found in the music folder. If the folder doesn't contain any albums and or tracks within those albums, the app will just simply run without them.
 Added adjustment sounds to indicate resetting the volume, pan, and pitch of the music.

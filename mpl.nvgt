@@ -9,7 +9,7 @@ int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, 
 string musictype="3dyw";
 string musictype2="music1";
 string playingMusictype=musictype;
-string version="2.4";
+string version="2.5";
 instance appstence("mpl");
 sound_pool pool, musicpool;
 timer effectstimer, fadetimer;
@@ -210,9 +210,9 @@ speak("music pan, "+musicpan);
 if (key_repeating(KEY_H) and spokenpitch == 1)
 {
 double semitones = 12 * (log(musicpitch / 100.0) / log(2.0));
+if (abs(semitones) < 0.005) semitones = 0.0;
 double semitoneRounded = round(semitones, 2);
-double pitchRounded = round(musicpitch, 2);
-speak("Music pitch, " + pitchRounded + ": " + semitoneRounded + " semitones");
+speak("Music pitch, " + semitoneRounded + " semitones");
 }
 if(key_repeating(KEY_L) and resetvolume==1)
 {
@@ -317,7 +317,7 @@ if(key_repeating(KEY_RETURN) and resumekey==1)
 if(musicpool.sound_is_playing(musicslot))
 {
 if(pausefeedback==1)  pool.play_stationary("pause.wav",false);
-fade_pitch_pool(musicpool, target_pitch:10, mode:0);
+fade_pitch_pool(musicpool, target_pitch:25, mode:0);
 musicpool.pause_sound(musicslot);
 }
 else
