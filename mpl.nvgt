@@ -4,7 +4,7 @@
 const float SEEK_AMOUNT = 1000.0;
 double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
-int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, shufflefeedback=1, timeadjust=1, effectstime=250, fadetime=50;
+int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=1, effectstime=250, fadetime=50;
 int speakmuskey=1, trimkey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
@@ -49,7 +49,7 @@ if (alt_is_down())
 {
     if (key_repeating(KEY_LEFT) and trimkey==1)
     {
-pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
+if(seekfeedback==1) pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
         if (musicpool.sound_is_playing(musicslot))
         {
             float current = musicpool.items[musicslot].handle.position;
@@ -59,7 +59,7 @@ pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
     }
     if (key_repeating(KEY_RIGHT) and trimkey==1)
     {
-pool.play_stationary_extended("seekforward.wav",false,0,0,-5,100,false);
+if(seekfeedback==1) pool.play_stationary_extended("seekforward.wav",false,0,0,-5,100,false);
         if (musicpool.sound_is_playing(musicslot))
         {
             float current = musicpool.items[musicslot].handle.position;
@@ -72,6 +72,7 @@ pool.play_stationary_extended("seekforward.wav",false,0,0,-5,100,false);
     {
         if (musicpool.sound_is_playing(musicslot))
         {
+if(seekfeedback==1) pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
 speak("Beginning of track.");
             musicpool.items[musicslot].handle.seek(0.0f);
         }
@@ -94,7 +95,7 @@ if(control_is_down() or shift_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
 {
-pool.play_stationary("prev.wav",false);
+if(skipfeedback==1) pool.play_stationary("prev.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -106,7 +107,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and shufflekey==1)
 {
-pool.play_stationary("next.wav",false);
+if(skipfeedback==1) pool.play_stationary("next.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -141,7 +142,7 @@ speak("fade timer,"+fadetime+"ms");
 }
 if(key_repeating(KEY_LEFT) and !control_is_down() and !shift_is_down() and shufflekey==1)
 {
-pool.play_stationary("foldchange.wav",false);
+if(skipfeedback==1) pool.play_stationary("foldchange.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -159,7 +160,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and !control_is_down() and !shift_is_down() and shufflekey==1)
 {
-pool.play_stationary("foldchange.wav",false);
+if(skipfeedback==1) pool.play_stationary("foldchange.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -433,12 +434,14 @@ shufflefeedback=1;
 }
 if(key_repeating(KEY_X) and playsoundkey==1)
 {
-if(pausefeedback==1 and resumefeedback==1)
+if(pausefeedback==1 and resumefeedback==1 and seekfeedback==1 and skipfeedback==1)
 {
 pool.play_stationary_extended("switchoff.ogg",false,0,0,-5,100,false);
 speak("playback sounds off");
 pausefeedback=0;
 resumefeedback=0;
+seekfeedback=0;
+skipfeedback=0;
 }
 else
 {
@@ -446,6 +449,8 @@ pool.play_stationary_extended("switchon.ogg",false,0,0,-5,100,false);
 speak("playback sounds on");
 pausefeedback=1;
 resumefeedback=1;
+seekfeedback=1;
+skipfeedback=1;
 }
 }
 if(key_repeating(KEY_B) and paramsoundkey==1)
