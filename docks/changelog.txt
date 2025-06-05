@@ -1,4 +1,5 @@
 new in 2.4
+Added error checking for empty directories found in the music folder. If the folder doesn't contain any albums and or tracks within those albums, the app will just simply run without them.
 Added adjustment sounds to indicate resetting the volume, pan, and pitch of the music.
 Made it so the skip sounds don't get adjusted with the other effects while the music is paused or resumed.
 Made it so the playback sounds don't get adjusted with the other effects while the music is paused or resumed.

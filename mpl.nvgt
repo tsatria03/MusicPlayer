@@ -31,19 +31,16 @@ musplay();
 void musplay()
 {
 string[] albums = find_directories("sounds/music/*");
-if (albums.length() > 0)
-{
-musictype = albums[random(0, albums.length() - 1)];
-}
+if(albums.length()>0) musictype = albums[random(0, albums.length() - 1)];
 string[] tracks = find_files("sounds/music/" + musictype + "/music*");
-tracks.sort(natural_number_sort);
-if (tracks.length() > 0)
+if(tracks.length()>0)
 {
+tracks.sort(natural_number_sort);
 musictype2 = strip_directory(tracks[random(0, tracks.length() - 1)]);
-}
-playingMusictype=musictype;
+playingMusictype = musictype;
 musicslot = musicpool.play_stationary("sounds/music/" + musictype + "/" + musictype2, true);
 musicpool.update_sound_start_values(musicslot, musicpan, musicvolume, musicpitch);
+}
 while(true)
 {
 wait(5);
