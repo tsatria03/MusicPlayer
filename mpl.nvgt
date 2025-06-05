@@ -207,9 +207,12 @@ if(key_repeating(KEY_N) and spokenpan==1)
 {
 speak("music pan, "+musicpan);
 }
-if(key_repeating(KEY_H) and spokenpitch==1)
+if (key_repeating(KEY_H) and spokenpitch == 1)
 {
-speak("music pitch,"+musicpitch);
+double semitones = 12 * (log(musicpitch / 100.0) / log(2.0));
+double semitoneRounded = round(semitones, 2);
+double pitchRounded = round(musicpitch, 2);
+speak("Music pitch, " + pitchRounded + ": " + semitoneRounded + " semitones");
 }
 if(key_repeating(KEY_L) and resetvolume==1)
 {
