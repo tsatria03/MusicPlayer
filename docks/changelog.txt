@@ -1,3 +1,6 @@
+new in 2.4
+Made it so the lock sounds don't get adjusted with the other effects while the music is paused or resumed.
+Made it so you can't open the app multiple times while it's already running.
 new in 2.3
 Fixed a bug where music effects weren't being reset propperly when they were being adjusted passed the recommended thresholds upon pressing the letters L, P, and T.
 Made it so the pitch upper limit is now increased to 500. The parameter can no longer go abuv this vallue. This will also apply to resetting the pitch back to default upon pressing the letter T.

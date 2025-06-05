@@ -1,5 +1,5 @@
 #pragma document docks
-#pragma embed "data/assets.pl"
+#pragma embed "data/assets.plr"
 #include"includes/includes.nvgt"
 double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
@@ -10,14 +10,23 @@ string musictype="3dyw";
 string musictype2="music1";
 string playingMusictype=musictype;
 string version="2.3";
+instance appstence("mpl");
 sound_pool pool, musicpool;
 timer effectstimer, fadetimer;
 void main()
 {
 set_sound_storage("*");
 set_sound_decryption_key("yLnhpXN6@VL=DP&o*7O#Uz)tNHR?!tJUaQ4RP9MO%=ZjL9B",true);
-show_game_window("music player, version "+version);
+show_window("music player, version "+version);
+if(appstence.is_already_running)
+{
+alert("error", "You can only have one instence of this app running!");
+exit();
+}
+else
+{
 musplay();
+}
 }
 void musplay()
 {
@@ -84,7 +93,7 @@ pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 fadetime-=10;
 }
 }
-if(key_pressed(KEY_M) and timeadjust==1)
+if(key_repeating(KEY_M) and timeadjust==1)
 {
 speak("fade timer,"+fadetime+"ms");
 }
@@ -145,7 +154,7 @@ pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
 effectstime-=50;
 }
 }
-if(key_pressed(KEY_M) and !control_is_down() and !shift_is_down() and timeadjust==1)
+if(key_repeating(KEY_M) and !control_is_down() and !shift_is_down() and timeadjust==1)
 {
 speak("controler timer,"+effectstime+"ms");
 }
@@ -197,35 +206,35 @@ if (key_pressed(KEY_C))
 {
 pan_step_up();
 }
-if(key_pressed(KEY_V) and spokenvolume==1)
+if(key_repeating(KEY_V) and spokenvolume==1)
 {
 speak("music volume, "+musicvolume);
 }
-if(key_pressed(KEY_N) and spokenpan==1)
+if(key_repeating(KEY_N) and spokenpan==1)
 {
 speak("music pan, "+musicpan);
 }
-if(key_pressed(KEY_H) and spokenpitch==1)
+if(key_repeating(KEY_H) and spokenpitch==1)
 {
 speak("music pitch,"+musicpitch);
 }
-if(key_pressed(KEY_L) and resetvolume==1)
+if(key_repeating(KEY_L) and resetvolume==1)
 {
 reset_volume();
 }
-if(key_pressed(KEY_P) and resetpan==1)
+if(key_repeating(KEY_P) and resetpan==1)
 {
 reset_pan();
 }
-if(key_pressed(KEY_T) and resetpitch==1)
+if(key_repeating(KEY_T) and resetpitch==1)
 {
 reset_pitch();
 }
-if(key_pressed(KEY_SEMICOLON) and speakmuskey==1)
+if(key_repeating(KEY_SEMICOLON) and speakmuskey==1)
 {
 speak("You're currently focused on the "+musictype+" music folder.");
 }
-if(key_pressed(KEY_APOSTROPHE) and speakmuskey==1)
+if(key_repeating(KEY_APOSTROPHE) and speakmuskey==1)
 {
 speak("You're currently playing " + strip_extension(musictype2) + " from the " + playingMusictype + " music folder.");
 }
@@ -330,7 +339,7 @@ fade_pitch_pool(musicpool, target_pitch:musicpitch, mode:1);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_pressed(KEY_BACKSLASH) and shufflesoundkey==1)
+if(key_repeating(KEY_BACKSLASH) and shufflesoundkey==1)
 {
 if(shufflefeedback==1)
 {
@@ -345,7 +354,7 @@ speak("shuffle sounds on");
 shufflefeedback=1;
 }
 }
-if(key_pressed(KEY_X) and playsoundkey==1)
+if(key_repeating(KEY_X) and playsoundkey==1)
 {
 if(pausefeedback==1 and resumefeedback==1)
 {
@@ -362,7 +371,7 @@ pausefeedback=1;
 resumefeedback=1;
 }
 }
-if(key_pressed(KEY_B) and paramsoundkey==1)
+if(key_repeating(KEY_B) and paramsoundkey==1)
 {
 if(volsound==1 and pansound==1 and pitchsound==1)
 {
@@ -381,7 +390,7 @@ pansound=1;
 pitchsound=1;
 }
 }
-if(key_pressed(KEY_U) and timekey==1)
+if(key_repeating(KEY_U) and timekey==1)
 {
 if(timeadjust==1)
 {
@@ -400,13 +409,12 @@ fadetime=50;
 timeadjust=1;
 }
 }
-if(key_pressed(KEY_Y))
+if(key_repeating(KEY_Y))
 {
 if(applock==0)
 {
 speak("keys locked");
-switchslot=pool.play_stationary("lock.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("lock.wav",false);
 applock=1;
 exitapp=0;
 timeadjust=0;
@@ -433,8 +441,7 @@ resetpitch=0;
 else if(applock==1)
 {
 speak("keys unlocked");
-switchslot=pool.play_stationary("unlock.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("unlock.wav",false);
 applock=0;
 exitapp=1;
 pausefeedback=1;
