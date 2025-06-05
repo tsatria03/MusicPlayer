@@ -70,9 +70,9 @@ if(seekfeedback==1) pool.play_stationary_extended("seekforward.wav",false,0,0,-5
     }
     if (key_repeating(KEY_R) and trimkey==1)
     {
+if(seekfeedback==1) pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
         if (musicpool.sound_is_playing(musicslot))
         {
-if(seekfeedback==1) pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
 speak("Beginning of track.");
             musicpool.items[musicslot].handle.seek(0.0f);
         }
@@ -87,7 +87,7 @@ if (key_repeating(KEY_L) and trimkey==1)
     }
     else
     {
-        speak("No music is playing.");
+        speak("There's no music currently playing.");
     }
 }
 }
