@@ -5,7 +5,7 @@ double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
 int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, shufflefeedback=1, timeadjust=1, effectstime=250, fadetime=50;
 int speakmuskey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
-int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=1, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
+int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
 string musictype2="music1";
 string playingMusictype=musictype;
