@@ -79,16 +79,16 @@ speak("Beginning of track.");
     }
 if (key_repeating(KEY_L) and trimkey==1)
 {
-    if (musicpool.sound_is_playing(musicslot))
-    {
+        if (musicpool.sound_is_active(musicslot))
+        {
         float pos = musicpool.items[musicslot].handle.position;
         float dur = musicpool.items[musicslot].handle.length;
         speak("Track position: " + format_time(pos) + " of " + format_time(dur));
     }
-    else
-    {
-        speak("There's no music currently playing.");
-    }
+else
+{
+speak("Track position: unknown.");
+}
 }
 }
 if(control_is_down() or shift_is_down())
