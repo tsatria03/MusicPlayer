@@ -48,6 +48,13 @@ return path+snd[random(0,snd.length()-1)];
 else
 return "";
 }
+string format_time(float milliseconds)
+{
+    int totalSeconds = int(milliseconds / 1000.0);
+    int minutes = totalSeconds / 60;
+    int seconds = totalSeconds % 60;
+    return format_int(minutes) + ":" + (seconds < 10 ? "0" : "") + format_int(seconds);
+}
 string get_new_album(string album,int direction)
 {
 string[] albumlist=find_directories("sounds/music/*");

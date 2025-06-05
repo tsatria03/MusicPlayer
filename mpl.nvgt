@@ -1,10 +1,11 @@
 #pragma document docks
 #pragma embed "data/assets.plr"
 #include"includes/includes.nvgt"
+const float SEEK_AMOUNT = 1000.0;
 double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
 int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, shufflefeedback=1, timeadjust=1, effectstime=250, fadetime=50;
-int speakmuskey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
+int speakmuskey=1, trimkey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
 string musictype2="music1";
@@ -44,6 +45,51 @@ musicpool.update_sound_start_values(musicslot, musicpan, musicvolume, musicpitch
 while(true)
 {
 wait(5);
+if (alt_is_down())
+{
+    if (key_repeating(KEY_LEFT) and trimkey==1)
+    {
+pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
+        if (musicpool.sound_is_playing(musicslot))
+        {
+            float current = musicpool.items[musicslot].handle.position;
+            float newtime = max(0.0f, current - SEEK_AMOUNT);
+            musicpool.items[musicslot].handle.seek(newtime);
+        }
+    }
+    if (key_repeating(KEY_RIGHT) and trimkey==1)
+    {
+pool.play_stationary_extended("seekforward.wav",false,0,0,-5,100,false);
+        if (musicpool.sound_is_playing(musicslot))
+        {
+            float current = musicpool.items[musicslot].handle.position;
+            float duration = musicpool.items[musicslot].handle.length;
+            float newtime = min(duration, current + SEEK_AMOUNT);
+            musicpool.items[musicslot].handle.seek(newtime);
+        }
+    }
+    if (key_repeating(KEY_R) and trimkey==1)
+    {
+        if (musicpool.sound_is_playing(musicslot))
+        {
+speak("Beginning of track.");
+            musicpool.items[musicslot].handle.seek(0.0f);
+        }
+    }
+if (key_repeating(KEY_L) and trimkey==1)
+{
+    if (musicpool.sound_is_playing(musicslot))
+    {
+        float pos = musicpool.items[musicslot].handle.position;
+        float dur = musicpool.items[musicslot].handle.length;
+        speak("Track position: " + format_time(pos) + " of " + format_time(dur));
+    }
+    else
+    {
+        speak("No music is playing.");
+    }
+}
+}
 if(control_is_down() or shift_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
@@ -456,6 +502,7 @@ playsoundkey=0;
 paramsoundkey=0;
 shufflekey=0;
 shufflesoundkey=0;
+trimkey=0;
 speakmuskey=0;
 resumekey=0;
 timekey=0;
@@ -482,6 +529,7 @@ playsoundkey=1;
 paramsoundkey=1;
 shufflekey=1;
 shufflesoundkey=1;
+trimkey=1;
 speakmuskey=1;
 resumekey=1;
 timeadjust=1;

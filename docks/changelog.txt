@@ -1,4 +1,7 @@
 new in 2.5
+Added the ability to get the current position of a playing track. You can hold alt and press the letter L to obtain this information.
+Added the ability to restart the playing track from the beginning. You can hold alt and press the letter R to do this.
+Added back the ability to seek forward and backward through a track. You can hold alt and press left or right arrows to go backward or forward in the current track while it's playing. A sound will also play while you're doing this as well.
 Reorganized some of the tracks found in various music folders.
 Added spoken feedback to adjusting music pitch. Pressing the letter H will now tell you how high or low the sound is.
 Added spoken feedback to adjusting music volume. Pressing the letter V will now tell you how loud or quiet the sound is.
@@ -100,13 +103,13 @@ Pressing the letters L, P, and T will no longer indecate the reset state if it i
 Changed the way in wich values of parameters are spoken when pressing the letters V, H, and N. From now on, all adjustible effects will be anounced in percentages, not actual values.
 Pressing the letters W, S, F, J, Z, and C will no longer anounce the values of volume, pan, and pitch as they are adjusted.
 Removed the menu prompt that asked you if you wanted to unlock all the keys for use. Now if you press the Letter Y wile the keys are locked, it will ask you to enter the passcode to unlock it.
-Removed the keys that were asined to seak back and forth through a track, do to the new sound algorithm not supporting it.
+Removed the keys that were asined to seek back and forth through a track, do to the new sound algorithm not supporting it.
 The volume, pan, and pitch now has an input field within the menu to directly spesify what you would like the effects to be altered to instead of just pressing keys to change them incrimentaley.
 Added a new menu that will allow you to modify effects and quickly access listening controls without pressing any asined keys. You can press the grave accent key on the keyboard to open it.
 Added a save feature to adjustable parameters. This will allow you to save the last changed effect the nex time you reshuffle tracks, or exit the app and come back to it.
 new in 1.6
 Removed extraneous messages related to pressing keys durring paused playback. You'll no longer hear it say, you can't do X Y Z wile the music is paused.
-recoded the intire sound system. As a result, seaking forward/backward through a track is no longer possible do to changes in how sounds are being loaded for playback. You can still change the volume, pan, and pitch of a playing track as before.
+recoded the intire sound system. As a result, seeking forward/backward through a track is no longer possible do to changes in how sounds are being loaded for playback. You can still change the volume, pan, and pitch of a playing track as before.
 The keys are now lockable with a passcode. If you provide the wrong number, it will remain locked untill you get it correct. A menu prompt will show up if you press the letter Y wile the keys are locked.
 added a new shuffle sound for randomizing music. You'll hear it everytime you press one of the shuffle keys.
 If the music is paused, and you press the letter Y, you will not be able to lock the keys from being used unless the music is resumed.
@@ -117,7 +120,7 @@ If the music is paused, and you press the letters V, H, or N, the speech will no
 If the music is paused, and you press the letter X, the speech will notify you that playback sounds can't be enabled unless the music is resumed.
 new in 1.5
 You can now disable playback sounds for when the music is played or resumed. Pressing the letter X will enable or disable these sounds.
-You can now seak forwards and backwards by 1 second while the music is playing. Pressing the letters G or B will let you do this.
+You can now seek forwards and backwards by 1 second while the music is playing. Pressing the letters G or B will let you do this.
 If the timer adjuster is turned off, and you press the letter M, the speech will no longer anounce the value in ms. This applys to weather the music is playing or not.
 If the music is paused, and you press the letter U, the speech will notify you that the timer adjuster can't be enabled unless the music is resumed.
 You can now completely disable the wait timer feature by pressing the letter U. When you do this, pressing the up or down arrow key will no longer change the timer to reflect how fast the music parameters can be adjusted. If you would like to re enable this feature, pressing the letter U will turn it back on to be used again.

@@ -10,6 +10,8 @@ pause.wav
 pitchchange.ogg
 play.wav
 prev.wav
+seekback.wav
+seekforward.wav
 shake1.wav
 shake2.wav
 switchoff.ogg
@@ -18,4 +20,4 @@ toggleoff.ogg
 toggleon.ogg
 unlock.wav
 voluchange.wav
-total files: 20
+total files: 22
