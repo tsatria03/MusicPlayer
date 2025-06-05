@@ -9,7 +9,7 @@ int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, 
 string musictype="3dyw";
 string musictype2="music1";
 string playingMusictype=musictype;
-string version="2.3";
+string version="2.4";
 instance appstence("mpl");
 sound_pool pool, musicpool;
 timer effectstimer, fadetimer;
@@ -51,8 +51,7 @@ if(control_is_down() or shift_is_down())
 {
 if(key_repeating(KEY_LEFT) and shufflekey==1)
 {
-switchslot=pool.play_stationary("prev.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("prev.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -64,8 +63,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and shufflekey==1)
 {
-switchslot=pool.play_stationary("next.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("next.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -100,8 +98,7 @@ speak("fade timer,"+fadetime+"ms");
 }
 if(key_repeating(KEY_LEFT) and !control_is_down() and !shift_is_down() and shufflekey==1)
 {
-switchslot=pool.play_stationary("foldchange.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("foldchange.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -119,8 +116,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 if(key_repeating(KEY_RIGHT) and !control_is_down() and !shift_is_down() and shufflekey==1)
 {
-switchslot=pool.play_stationary("foldchange.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("foldchange.wav",false);
 if(musicpool.sound_is_playing(musicslot))
 {
 musicpool.destroy_sound(musicslot);
@@ -242,8 +238,7 @@ if(key_repeating(KEY_G) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("shake"+random(1,2)+".wav",false);
 }
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -257,8 +252,7 @@ if(key_repeating(KEY_R) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("shake"+random(1,2)+".wav",false);
 }
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -274,8 +268,7 @@ if(key_repeating(KEY_TAB) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("shake"+random(1,2)+".wav",false);
 }
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -291,8 +284,7 @@ if(key_repeating(KEY_SPACE) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("shake"+random(1,2)+".wav",false);
 }
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -308,8 +300,7 @@ if(key_repeating(KEY_BACK) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
-switchslot=pool.play_stationary("shake"+random(1,2)+".wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+pool.play_stationary("shake"+random(1,2)+".wav",false);
 }
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -325,15 +316,13 @@ if(key_repeating(KEY_RETURN) and resumekey==1)
 {
 if(musicpool.sound_is_playing(musicslot))
 {
-if(pausefeedback==1)  switchslot=pool.play_stationary("pause.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+if(pausefeedback==1)  pool.play_stationary("pause.wav",false);
 fade_pitch_pool(musicpool, target_pitch:10, mode:0);
 musicpool.pause_sound(musicslot);
 }
 else
 {
-if(resumefeedback==1)  switchslot=pool.play_stationary("play.wav",false);
-pool.update_sound_start_values(switchslot,musicpan,musicvolume,musicpitch);
+if(resumefeedback==1)  pool.play_stationary("play.wav",false);
 musicpool.resume_sound(musicslot);
 fade_pitch_pool(musicpool, target_pitch:musicpitch, mode:1);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);

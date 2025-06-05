@@ -1,5 +1,8 @@
 new in 2.4
 Added adjustment sounds to indicate resetting the volume, pan, and pitch of the music.
+Made it so the skip sounds don't get adjusted with the other effects while the music is paused or resumed.
+Made it so the playback sounds don't get adjusted with the other effects while the music is paused or resumed.
+Made it so the shuffle sounds don't get adjusted with the other effects while the music is paused or resumed.
 Made it so the lock sounds don't get adjusted with the other effects while the music is paused or resumed.
 Made it so you can't open the app multiple times while it's already running.
 new in 2.3
