@@ -20,7 +20,7 @@ width=wt;
 }
 void initialize_reverb_pools()
 {
-pools = {pool, musicpool};
+pools = {musicpool, pool};
 }
 void revfxloop()
 {

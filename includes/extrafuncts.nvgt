@@ -34,7 +34,7 @@ m.add_item(prompt);
 m.add_item("yes");
 m.add_item("no");
 m.automatic_intro = false;
-pool.play_stationary("menuopen.ogg", false);
+spool.play_stationary("menuopen.ogg", false);
 speak(prompt);
 while (m.selected_item < 1)
 {

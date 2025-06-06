@@ -13,7 +13,7 @@ string reverid=generate_custom_token(random(5, 10), token_sims);
 string token_sims="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 string version="2.6";
 instance appstence("mpl");
-sound_pool pool, musicpool;
+sound_pool musicpool, pool, spool;
 timer effectstimer;
 void main()
 {
@@ -34,7 +34,7 @@ musplay();
 }
 void initialize_sound_pools()
 {
-sound_pool@[] pools = {pool, musicpool};
+sound_pool@[] pools = {musicpool, pool};
 for (uint i = 0; i < pools.length(); i++)
 {
 @pools[i].mixer = mixer();
