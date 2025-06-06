@@ -88,7 +88,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 void pitch_scroll_down()
 {
-if(pitchadjust==1 and musicpitch!=25 and effectstimer.elapsed>=effectstime)
+if(pitchadjust==1 and abs(musicpitch - 25.0) > 0.005 and effectstimer.elapsed>=effectstime)
 {
 if(spokenvalues==1)
 {
@@ -115,7 +115,7 @@ effectstimer.restart();
 }
 void pitch_scroll_up()
 {
-if(pitchadjust==1 and musicpitch!=400 and effectstimer.elapsed>=effectstime)
+if(pitchadjust==1 and abs(musicpitch - 400.0) > 0.005 and effectstimer.elapsed>=effectstime)
 {
 if(spokenvalues==1)
 {
@@ -142,7 +142,7 @@ effectstimer.restart();
 }
 void pitch_step_down()
 {
-if(pitchadjust==1 and musicpitch!=25)
+if(pitchadjust==1 and abs(musicpitch - 25.0) > 0.005)
 {
 if(spokenvalues==1)
 {
@@ -167,7 +167,7 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 void pitch_step_up()
 {
-if(pitchadjust==1 and musicpitch!=400)
+if(pitchadjust==1 and abs(musicpitch - 400.0) > 0.005)
 {
 if(spokenvalues==1)
 {
@@ -310,11 +310,11 @@ musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 void reset_pitch()
 {
-if(musicpitch==100 and resetpitch==1)
+if(abs(musicpitch - 100.0) < 0.005 and resetpitch==1)
 {
 speak("Pitch is already reset");
 }
-else if(musicpitch<=400 || musicpitch>=400 and resetpitch==1)
+else if(resetpitch==1)
 {
 if(pitchsound==1) switchslot=pool.play_stationary("pitchchange.ogg",false);
 speak("pitch reset");

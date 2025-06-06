@@ -1,3 +1,9 @@
+new in 2.6
+Made it so music pitch will now be enforced to strictly use semitone shifted values instead of actual raw values for all instences.
+Removed the ability to adjust the fade timer, along with speaking it's value in ms.
+Made it so the music pitch will no longer fade up or down depending on the playback state of the track.
+Fixed a bug where changing the music pitch before and after pausing it would cause the pitch fader to not function propperly upon resuming the music.
+Implemented a reverb effect into the app, used later on.
 new in 2.5
 Added the ability to get the current position of a playing track. You can hold alt and press the letter L to obtain this information.
 Added the ability to restart the playing track from the beginning. You can hold alt and press the letter R to do this.

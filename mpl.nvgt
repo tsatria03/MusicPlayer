@@ -1,23 +1,28 @@
 #pragma document docks
 #pragma embed "data/assets.plr"
 #include"includes/includes.nvgt"
-const float SEEK_AMOUNT = 1000.0;
+float revdry=0.5, revwet=0.5, revsize=0.5, revdamp=0.5, revwidth=1.0;
+float SEEK_AMOUNT = 1000.0;
 double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
-int applock=0, exitapp=1, pausesound=1, resumesound=1, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=1, effectstime=250, fadetime=50;
+int applock=0, exitapp=1, pausesound=1, resumesound=1, reversfx=0, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=1, effectstime=250;
 int speakmuskey=1, trimkey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
 string musictype2="music1";
 string playingMusictype=musictype;
-string version="2.5";
+string reverid=generate_custom_token(random(5, 10), token_sims);
+string token_sims="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+string version="2.6";
 instance appstence("mpl");
 sound_pool pool, musicpool;
-timer effectstimer, fadetimer;
+timer effectstimer;
 void main()
 {
 set_sound_storage("*");
 set_sound_decryption_key("yLnhpXN6@VL=DP&o*7O#Uz)tNHR?!tJUaQ4RP9MO%=ZjL9B",true);
+initialize_reverb_pools();
+initialize_sound_pools();
 show_window("music player, version "+version);
 if(appstence.is_already_running)
 {
@@ -27,6 +32,14 @@ exit();
 else
 {
 musplay();
+}
+}
+void initialize_sound_pools()
+{
+sound_pool@[] pools = {pool, musicpool};
+for (uint i = 0; i < pools.length(); i++)
+{
+@pools[i].mixer = mixer();
 }
 }
 void musplay()
@@ -42,9 +55,11 @@ playingMusictype = musictype;
 musicslot = musicpool.play_stationary("sounds/music/" + musictype + "/" + musictype2, true);
 musicpool.update_sound_start_values(musicslot, musicpan, musicvolume, musicpitch);
 }
+if(reversfx==1) create_reverb_effect(reverid, revdry, revwet, revsize, revdamp, revwidth);
 while(true)
 {
 wait(5);
+revfxloop();
 if (alt_is_down())
 {
     if (key_repeating(KEY_LEFT) and trimkey==1)
@@ -73,7 +88,6 @@ if(seekfeedback==1) pool.play_stationary_extended("seekforward.wav",false,0,0,-5
 if(seekfeedback==1) pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
         if (musicpool.sound_is_playing(musicslot))
         {
-speak("Beginning of track.");
             musicpool.items[musicslot].handle.seek(0.0f);
         }
     }
@@ -116,28 +130,6 @@ playingMusictype = musictype;
 musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,true);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
-}
-if(key_repeating(KEY_UP) and fadetime!=100)
-{
-if(timeadjust==1)
-{
-speak(fadetime+10+"ms");
-pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
-fadetime+=10;
-}
-}
-if(key_repeating(KEY_DOWN) and fadetime!=10)
-{
-if(timeadjust==1)
-{
-speak(fadetime-10+"ms");
-pool.play_stationary("medalbutton"+random(1,3)+".ogg",false);
-fadetime-=10;
-}
-}
-if(key_repeating(KEY_M) and timeadjust==1)
-{
-speak("fade timer,"+fadetime+"ms");
 }
 }
 if(key_repeating(KEY_LEFT) and !control_is_down() and !shift_is_down() and shufflekey==1)
@@ -406,14 +398,12 @@ if(key_repeating(KEY_RETURN) and resumekey==1)
 if(musicpool.sound_is_playing(musicslot))
 {
 if(pausefeedback==1)  pool.play_stationary("pause.wav",false);
-fade_pitch_pool(musicpool, target_pitch:25, mode:0);
 musicpool.pause_sound(musicslot);
 }
 else
 {
 if(resumefeedback==1)  pool.play_stationary("play.wav",false);
 musicpool.resume_sound(musicslot);
-fade_pitch_pool(musicpool, target_pitch:musicpitch, mode:1);
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
@@ -479,7 +469,6 @@ if(timeadjust==1)
 pool.play_stationary_extended("toggleoff.ogg",false,0,0,-5,100,false);
 speak("timer adjustments off");
 effectstime=500;
-fadetime=100;
 timeadjust=0;
 }
 else
@@ -487,7 +476,6 @@ else
 pool.play_stationary_extended("toggleon.ogg",false,0,0,-5,100,false);
 speak("timer adjustments on");
 effectstime=250;
-fadetime=50;
 timeadjust=1;
 }
 }

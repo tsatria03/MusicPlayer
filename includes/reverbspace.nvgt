@@ -1,0 +1,80 @@
+reverb_effect@[]reverb_effects(0);
+sound_pool@[] pools;
+class reverb_effect
+{
+float dry_mix;
+float wet_mix;
+float room_size;
+float dampping;
+float width;
+string reverb_id;
+reverb_effect(string rd,float dm,float wm,float rs,float dp,float wt)
+{
+reverb_id=rd;
+dry_mix=dm;
+wet_mix=wm;
+room_size=rs;
+dampping=dp;
+width=wt;
+}
+}
+void initialize_reverb_pools()
+{
+pools = {pool, musicpool};
+}
+void revfxloop()
+{
+bool reverb_applied=false;
+string applied_reverb_id="";
+for(uint i=0; i<reverb_effects.length(); i++)
+{
+if(!reverb_applied)
+{
+string fxtype="$"+reverb_effects[i].reverb_id+":freeverb:"+reverb_effects[i].dry_mix+":"+reverb_effects[i].wet_mix+":"+reverb_effects[i].room_size+":"+reverb_effects[i].dampping+":"+reverb_effects[i].width;
+for(uint j=0; j<pools.length(); j++)
+{
+pools[j].mixer.set_fx(fxtype);
+}
+reverb_applied=true;
+applied_reverb_id=reverb_effects[i].reverb_id;
+}
+}
+if(!reverb_applied)
+{
+for(uint j=0; j<pools.length(); j++)
+{
+pools[j].mixer.set_fx("$");
+}
+}
+else
+{
+for(uint i=0; i<reverb_effects.length(); i++)
+{
+if(reverb_effects[i].reverb_id!=applied_reverb_id)
+{
+for(uint j=0; j<pools.length(); j++)
+{
+pools[j].mixer.set_fx("$"+reverb_effects[i].reverb_id);
+}
+}
+}
+}
+}
+void create_reverb_effect(string reverb_id,float dry_mix,float wet_mix,float room_size,float dampping,float width)
+{
+reverb_effect rf1(reverb_id,dry_mix,wet_mix,room_size,dampping,width);
+reverb_effects.insert_last(rf1);
+string fxtype="$"+rf1.reverb_id+":freeverb:"+rf1.dry_mix+":"+rf1.wet_mix+":"+rf1.room_size+":"+rf1.dampping+":"+rf1.width;
+for(uint j=0; j<pools.length(); j++)
+{
+pools[j].mixer.set_fx(fxtype);
+}
+}
+void destroy_all_reverb_effects()
+{
+for(uint j=0; j<pools.length(); j++)
+{
+pools[j].mixer.set_fx("$");
+}
+reverb_effects.resize(0);
+}
