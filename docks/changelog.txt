@@ -1,4 +1,6 @@
 new in 2.6
+Changed the key to shuffle the golden crayon music from space to enter.
+Changed the key to pause the music from enter to space.
 Added the ability to toggle the reverb effect on or off by holding alt and pressing the letter E.
 Made it so music pitch will now be enforced to strictly use semitone shifted values instead of actual raw values for all instances.
 Removed the ability to adjust the fade timer, along with speaking it's value in ms.

@@ -1,5 +1,3 @@
-#pragma document docks
-#pragma embed "data/assets.plr"
 #include"includes/includes.nvgt"
 float revdry=1.0, revwet=1.0, revsize=0.5, revdamp=0.5, revwidth=1.0;
 float SEEK_AMOUNT = 1000.0;
@@ -377,7 +375,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,tru
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_repeating(KEY_SPACE) and shufflekey==1)
+if(key_repeating(KEY_RETURN) and shufflekey==1)
 {
 if(shufflefeedback==1)
 {
@@ -409,7 +407,7 @@ musicslot=musicpool.play_stationary("sounds/music/"+musictype+"/"+musictype2,tru
 musicpool.update_sound_start_values(musicslot,musicpan,musicvolume,musicpitch);
 }
 }
-if(key_repeating(KEY_RETURN) and resumekey==1)
+if(key_repeating(KEY_SPACE) and resumekey==1)
 {
 if(musicpool.sound_is_playing(musicslot))
 {
@@ -566,7 +564,8 @@ exit();
 }
 else
 {
-dlgplay("exit.wav");
+pool.play_stationary("exit.wav",false);
+wait(1000);
 exit();
 }
 }
