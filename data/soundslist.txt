@@ -4,6 +4,9 @@ lock.wav
 medalbutton1.ogg
 medalbutton2.ogg
 medalbutton3.ogg
+menuclick.ogg
+menuenter.ogg
+menuopen.ogg
 next.wav
 panchange.wav
 pause.wav
@@ -20,4 +23,4 @@ toggleoff.ogg
 toggleon.ogg
 unlock.wav
 voluchange.wav
-total files: 22
+total files: 25
