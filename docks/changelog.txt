@@ -1,4 +1,6 @@
 new in 2.6
+Made it so pressing the escape key no longer immediately quits the program. It will now bring up a menu asking the user if they'd like to exit or not.
+Updated the readme file with added and modified keyboard shortcuts.
 Changed the key to shuffle the golden crayon music from space to enter.
 Changed the key to pause the music from enter to space.
 Added the ability to toggle the reverb effect on or off by holding alt and pressing the letter E.

@@ -20,20 +20,29 @@ Letter, R: Shuffles through all of the music folders stored in the app, if press
 Letter, V: Anounce current music volume, if pressed.
 Letter, N: Anounce current music pan, if pressed.
 Letter, H: Anounce current music pitch, if pressed.
-Letter, L: Resets music volume to default, if pressed.
-Letter, P: Resets music pan to default, if pressed.
-Letter, T: Resets music pitch to default, if pressed.
+Letter, L: Resets music volume back to default, if pressed.
+Letter, P: Resets music pan back to default, if pressed.
+Letter, T: Resets music pitch back to default, if pressed.
 Letter, M: Anounce the wait timer's value in ms, if pressed.
+Letter, B: Turns the adjustment sounds on or off, if pressed.
 Letter, X: Turns the playback sounds on or off, if pressed.
 Letter, U: Turns on or off the waittimer for adjusting effects, if pressed.
-Enter: Pause/resume music, if pressed.
+Spacebar: Pause/resume music, if pressed.
 Left arrow: Cycles backward through the available music folders, if pressed.
 Right arrow: Cycles forward through the available music folders, if pressed.
 Up arrow: Increase the wait timer for adjusting effects, if pressed.
 Down arrow: Decrease the wait timer for adjusting effects, if pressed.
+Control or Shift plus Left arrow: Cycles backward through the available tracks in the currently focused music folder, if pressed.
+Control or Shift plus Right arrow: Cycles forward through the available tracks in the currently focused music folder, if pressed.
+Alt plus Letter E: Turns the reverb effect on or off, if pressed.
+Alt plus Letter R: Restarts the currently playing track, if pressed.
+Alt plus Letter L: Anounce the position of the currently playing track, if pressed.
+Alt plus Left arrow: seeks backward in the currently playing track, if pressed.
+Alt plus Right arrow: seeks forward in the currently playing track, if pressed.
 Tab: Shuffles music from the game 3dimensional your world, if pressed.
-Spacebar: Shuffles music from the game golden crayon, if pressed.
+Enter: Shuffles music from the game golden crayon, if pressed.
 Backspace: Shuffles music from the game survive the wild, if pressed.
-Semicolon : Anounce currently focused music folder, if pressed.
-Backslash: Turns the shuffle sound on or off, if pressed.
+Semicolon : Anounce the currently focused music folder, if pressed.
+Apostrophe: Anounce the currently focused track in the music folder, if pressed.
+Backslash: Turns the shuffle sounds on or off, if pressed.
 Escape: exitthe the program, if pressed.

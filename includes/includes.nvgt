@@ -1,7 +1,9 @@
 #pragma document docks
 #pragma embed "data/assets.plr"
 #include"bgt_compat.nvgt"
+#include"form.nvgt"
 #include"instance.nvgt"
+#include"menu.nvgt"
 #include"sound_pool.nvgt"
 #include"speech.nvgt"
 #include"token_gen.nvgt"

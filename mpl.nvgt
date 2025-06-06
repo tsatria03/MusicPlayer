@@ -3,7 +3,7 @@ float revdry=1.0, revwet=1.0, revsize=0.5, revdamp=0.5, revwidth=1.0;
 float SEEK_AMOUNT = 1000.0;
 double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
-int applock=0, exitapp=1, pausesound=1, resumesound=1, revkey=1, reversfx=0, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=1, effectstime=250;
+int applock=0, exitapp=1, pausesound=1, resumesound=1, revkey=1, reversfx=0, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=0, effectstime=500;
 int speakmuskey=1, trimkey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
@@ -554,19 +554,29 @@ resetpan=1;
 resetpitch=1;
 }
 }
-if(key_pressed(KEY_ESCAPE) and exitapp==1)
+if(key_repeating(KEY_ESCAPE) and exitapp==1)
+{
+if (menu_question("Are you sure you want to exit?"))
 {
 if(musicpool.sound_is_playing(musicslot))
 {
 pool.play_stationary("exit.wav",false);
+speak("exiting");
 fade_volume_pool(musicpool);
 exit();
 }
 else
 {
 pool.play_stationary("exit.wav",false);
+speak("exiting");
 wait(1000);
 exit();
+}
+}
+else
+{
+speak("canceled");
+continue;
 }
 }
 }

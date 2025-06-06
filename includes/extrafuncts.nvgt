@@ -22,6 +22,29 @@ return true;
 }
 return false;
 }
+bool menu_question(const string&in prompt, menu@ m = null)
+{
+if (@m == null) @m = menu();
+m.click_sound="menuclick.ogg";
+m.close_sound="menuenter.ogg";
+m.edge_sound="menuclick.ogg";
+m.select_sound="menuenter.ogg";
+m.focus_first_item = true;
+m.add_item(prompt);
+m.add_item("yes");
+m.add_item("no");
+m.automatic_intro = false;
+pool.play_stationary("menuopen.ogg", false);
+speak(prompt);
+while (m.selected_item < 1)
+{
+wait(5);
+if (m.monitor()) continue;
+if (m.selected_item == 0) speak(prompt);
+else break;
+}
+return m.selected_item == 1;
+}
 double clamp(double value, double min, double max)
 {
 value=value<min? min:value;
