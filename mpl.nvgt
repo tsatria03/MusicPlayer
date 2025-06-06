@@ -1,11 +1,11 @@
 #pragma document docks
 #pragma embed "data/assets.plr"
 #include"includes/includes.nvgt"
-float revdry=0.5, revwet=0.5, revsize=0.5, revdamp=0.5, revwidth=1.0;
+float revdry=1.0, revwet=1.0, revsize=0.5, revdamp=0.5, revwidth=1.0;
 float SEEK_AMOUNT = 1000.0;
 double musicvolume=0, musicpan=0, musicpitch=100;
 int musicslot, switchslot;
-int applock=0, exitapp=1, pausesound=1, resumesound=1, reversfx=0, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=1, effectstime=250;
+int applock=0, exitapp=1, pausesound=1, resumesound=1, revkey=1, reversfx=0, pausefeedback=1, resumefeedback=1, seekfeedback=1, shufflefeedback=1, skipfeedback=1, timeadjust=1, effectstime=250;
 int speakmuskey=1, trimkey=1, playsoundkey=1, paramsoundkey=1, resumekey=1, shufflekey=1, shufflesoundkey=1, timekey=1, volsound=1, pansound=1, pitchsound=1;
 int volumeadjust=1, panadjust=1, pitchadjust=1, spokenvalues=0, spokenvolume=1, spokenpan=1, spokenpitch=1, resetvolume=1, resetpan=1, resetpitch=1;
 string musictype="3dyw";
@@ -55,7 +55,6 @@ playingMusictype = musictype;
 musicslot = musicpool.play_stationary("sounds/music/" + musictype + "/" + musictype2, true);
 musicpool.update_sound_start_values(musicslot, musicpan, musicvolume, musicpitch);
 }
-if(reversfx==1) create_reverb_effect(reverid, revdry, revwet, revsize, revdamp, revwidth);
 while(true)
 {
 wait(5);
@@ -83,6 +82,23 @@ if(seekfeedback==1) pool.play_stationary_extended("seekforward.wav",false,0,0,-5
             musicpool.items[musicslot].handle.seek(newtime);
         }
     }
+if(key_repeating(KEY_E) and revkey==1)
+{
+if(reversfx==1)
+{
+pool.play_stationary_extended("toggleoff.ogg",false,0,0,-5,100,false);
+speak("reverb off");
+destroy_all_reverb_effects();
+reversfx=0;
+}
+else
+{
+pool.play_stationary_extended("toggleon.ogg",false,0,0,-5,100,false);
+speak("reverb on");
+create_reverb_effect(reverid, revdry, revwet, revsize, revdamp, revwidth);
+reversfx=1;
+}
+}
     if (key_repeating(KEY_R) and trimkey==1)
     {
 if(seekfeedback==1) pool.play_stationary_extended("seekback.wav",false,0,0,-5,100,false);
@@ -190,7 +206,7 @@ if(key_repeating(KEY_M) and !control_is_down() and !shift_is_down() and timeadju
 {
 speak("controler timer,"+effectstime+"ms");
 }
-if(key_down(KEY_E))
+if(!alt_is_down() and key_down(KEY_E))
 {
 volume_scroll_up();
 }
@@ -490,6 +506,7 @@ exitapp=0;
 timeadjust=0;
 pausefeedback=0;
 resumefeedback=0;
+revkey=0;
 shufflefeedback=0;
 playsoundkey=0;
 paramsoundkey=0;
@@ -517,6 +534,7 @@ applock=0;
 exitapp=1;
 pausefeedback=1;
 resumefeedback=1;
+revkey=1;
 shufflefeedback=1;
 playsoundkey=1;
 paramsoundkey=1;

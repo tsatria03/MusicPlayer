@@ -1,5 +1,6 @@
 new in 2.6
-Made it so music pitch will now be enforced to strictly use semitone shifted values instead of actual raw values for all instences.
+Added the ability to toggle the reverb effect on or off by holding alt and pressing the letter E.
+Made it so music pitch will now be enforced to strictly use semitone shifted values instead of actual raw values for all instances.
 Removed the ability to adjust the fade timer, along with speaking it's value in ms.
 Made it so the music pitch will no longer fade up or down depending on the playback state of the track.
 Fixed a bug where changing the music pitch before and after pausing it would cause the pitch fader to not function propperly upon resuming the music.
